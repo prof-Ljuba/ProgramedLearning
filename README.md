@@ -1,6 +1,5 @@
 # ProgramedLearning
-Programmed teaching with additional support for students with difficulties, for example for ASR and TTS etc.
-# ProgrammedLearning
+Programmed teaching with additional support for students with difficulties.
 
 **Programmed for Schools**  
 Interactive learning with text, images, questions, quizzes, TTS and ASR support.
@@ -10,6 +9,7 @@ Enable students to:
 - independent and guided learning
 - accessibility (IOP, autism, dyslexia)
 - work on a computer, phone and tablet
+- Differentiated learning (or instruction) - teaching approach that meet the diverse needs, readiness levels, interests, and learning profiles of individual students
 
 Enable teachers to:
 - easy creation of lessons
@@ -46,6 +46,7 @@ Omogućiti nastavnicima:
 - lako kreiranje lekcija
 - rad bez programiranja
 - lokalno i online korišćenje
+- diferencirana nastava (nastava sa diferenciranim pristupom)
 
 ## 🛠 Tehnologije
 - HTML / CSS / JavaScript
