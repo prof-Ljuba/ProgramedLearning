@@ -23,7 +23,9 @@ Enable teachers to:
 
 ## 📚 Author
 **Ljubiša Cvetić**  
-Hospitality and tourism school, Belgrade
+Hospitality and tourism school, Belgrade, Serbia
+adr. Ugostiteljsko-turisticka skola, Jug Bogdanova 28, 11000 Belgrade, Serbia
+cveticljubisa@yahoo.com
 
 ## ⚖️ License
 The educational content and the project 
@@ -55,7 +57,9 @@ Omogućiti nastavnicima:
 
 ## 📚 Autor
 **Ljubiša Cvetić**  
-Ugostiteljsko-turistička škola, Beograd
+Ugostiteljsko-turistička škola, Beograd, Srbia
+adr. Ugostiteljsko-turisticka skola, Jug Bogdanova 28, 11000 Beograd, Srbija
+cveticljubisa@yahoo.com
 
 ## ⚖️ Licenca
 Edukativni sadržaj i projekat objavljeni su pod  
