@@ -1,5 +1,5 @@
 # ProgramedLearning
-Programmed teaching with additional support for students with difficulties.
+Programmed teaching (eg. Programmed learning, Programmed instruction) / with some additional support for students with difficulties.
 
 **Programmed for Schools**  
 Interactive learning with text, images, questions, quizzes, TTS and ASR support.
