@@ -1,78 +1,133 @@
-# ProgramedLearning
-Programmed teaching (eg. Programmed learning, Programmed instruction) / with some additional support for students with difficulties.
+## 🇬🇧 ENGLISH
 
-**Programmed for Schools**  
-Interactive learning with text, images, questions, quizzes, TTS and ASR support.
+### 💻 Source Code
 
-## 🎯 Goal of the project
-Enable students to:
-- independent and guided learning
-- accessibility (IOP, autism, dyslexia)
-- work on a computer, phone and tablet
-- Differentiated learning (or instruction) - teaching approach that meet the diverse needs, readiness levels, interests, and learning profiles of individual students
+The source code of this project is open for:
 
-Enable teachers to:
-- easy creation of lessons
-- operation without programming
-- local and online use
+* use
+* modification
+* distribution
 
-## 🛠 Technologies
-- HTML / CSS / JavaScript
-- JSON (lessons and questions)
-- Web Speech API (TTS / ASR)
+for **educational and non-commercial purposes**.
 
-## 📚 Author
-**Ljubiša Cvetić**  
-Hospitality and tourism school, Belgrade, Serbia
-adr. Ugostiteljsko-turisticka skola, Jug Bogdanova 28, 11000 Belgrade, Serbia
-cveticljubisa@yahoo.com
-
-## ⚖️ License
-The educational content and the project 
-
-are published under  
-**Creative Commons BY-NC 4.0** (non-commercial).
+The code may be used in schools and educational institutions, provided that author information is preserved.
 
 ---
 
-**Programirana nastava (Programirano učenje) za škole**  
-Interaktivno učenje uz tekst, slike, pitanja, kvizove, TTS i ASR podršku.
+### 📚 Educational Content (lessons, texts, questions)
 
-## 🎯 Cilj projekta
-Omogućiti učenicima:
-- samostalno i vođeno učenje
-- pristupačnost (IOP, autizam, disleksija)
-- rad na računaru, telefonu i tabletu
+Lessons and educational materials are licensed under:
 
-Omogućiti nastavnicima:
-- lako kreiranje lekcija
-- rad bez programiranja
-- lokalno i online korišćenje
-- diferencirana nastava (nastava sa diferenciranim pristupom)
+**Creative Commons Attribution–NonCommercial (CC BY-NC)**
 
-## 🛠 Tehnologije
-- HTML / CSS / JavaScript
-- JSON (lekcije i pitanja)
-- Web Speech API (TTS / ASR)
-
-## 📚 Autor
-**Ljubiša Cvetić**  
-Ugostiteljsko-turistička škola, Beograd, Srbia
-adr. Ugostiteljsko-turisticka skola, Jug Bogdanova 28, 11000 Beograd, Srbija
-cveticljubisa@yahoo.com
-
-## ⚖️ Licenca
-Edukativni sadržaj i projekat objavljeni su pod  
-**Creative Commons BY-NC 4.0** (nekomercijalno).
+✔ free to use with proper attribution
+✔ adaptations allowed for educational purposes
+❌ commercial use is not permitted without explicit permission
+❌ removal of author/project attribution is not allowed
 
 ---
 
+## 👤 Author
 
+**Ljubiša Cvetić**
+Computer Science Teacher
+Hospitality & Tourism School
+Belgrade, Serbia
 
+---
 
+## 🤝 Contributing
 
+This project is open to:
 
+* suggestions and feedback
+* code improvements
+* collaboration with teachers
+* joint development of inclusive education tools
 
+Feel free to open an **Issue** or submit a **Pull Request**.
 
+---
 
+## 🌱 Vision
+
+Learning that:
+
+* does not rush
+* does not overwhelm
+* does not exclude
+
+But instead **understands the learner**.
+
+---
+
+### ✅ Zašto je ovo dobro rešenje
+
+* ✔ profesionalno (kao ozbiljni open-source projekti)
+* ✔ jasno razdvaja **code** i **content**
+* ✔ pravno korektno (BY-NC jasno definisano)
+* ✔ razumljivo i domaćim i stranim nastavnicima
+* ✔ spremno za širenje projekta
+
+---
+---
+
+## 🇷🇸 SRPSKI
+
+### 💻 Izvorni kod
+
+Izvorni kod ovog projekta je otvoren za:
+
+* korišćenje
+* izmenu
+* distribuciju
+
+u **obrazovne i nekomercijalne svrhe**.
+
+Dozvoljeno je koristiti kod u školama i obrazovnim institucijama uz zadržavanje informacija o autoru.
+
+---
+
+### 📚 Nastavni sadržaj (lekcije, tekstovi, pitanja)
+
+Lekcije i nastavni materijali su zaštićeni licencom:
+
+**Creative Commons Attribution–NonCommercial (CC BY-NC)**
+
+✔ dozvoljeno korišćenje uz navođenje autora
+✔ dozvoljena prilagođavanja za nastavu
+❌ nije dozvoljena komercijalna upotreba bez saglasnosti autora
+❌ nije dozvoljeno uklanjanje imena autora projekta i lekcija
+
+---
+
+## 👤 Autor
+
+**Ljubiša Cvetić**
+Profesor računarstva i informatike
+Ugostiteljsko-turistička škola
+Beograd, Srbija
+
+---
+
+## 🤝 Saradnja i doprinos
+
+Projekat je otvoren za:
+
+* predloge i sugestije
+* unapređenja koda
+* saradnju sa nastavnicima
+* zajednički razvoj inkluzivne i programirane nastave
+
+Ako želite da doprinesete, slobodno otvorite **Issue** ili **Pull Request**.
+
+---
+
+## 🌱 Vizija
+Učenje koje:
+* ne žuri
+* ne opterećuje
+* ne isključuje, već **razume učenika**.
+
+---
 
