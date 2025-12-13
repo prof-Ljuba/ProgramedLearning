@@ -1,4 +1,5 @@
-// Main application logiclet currentLanguage = "sr";
+// Main application logic
+let currentLanguage = "sr";
 let currentLessonFile = "osnove_racunara.json";
 let lessonData = null;
 
