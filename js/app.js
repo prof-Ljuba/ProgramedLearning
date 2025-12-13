@@ -1,4 +1,4 @@
-let currentLanguage = "sr";
+let currentLanguage = "en";
 let currentLessonFile = "osnove_racunara.json";
 let lessonData = null;
 
