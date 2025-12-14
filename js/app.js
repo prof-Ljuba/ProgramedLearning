@@ -1,5 +1,5 @@
 let currentLanguage = "en";
-let currentLessonFile = "osnove_racunara.json";
+let currentLessonFile = "computer_basics.json";
 let lessonData = null;
 
 // Učitaj lekciju iz JSON fajla
