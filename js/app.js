@@ -1,4 +1,4 @@
-let currentLanguage = "en";
+let currentLanguage = "sr";
 let currentLessonFile = "osnove_racunara.json"; //osnove_racunara.json ili computer_basics.json za sada
 let lessonData = null;
 
