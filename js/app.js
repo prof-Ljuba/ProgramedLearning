@@ -27,7 +27,7 @@ function showLessonInfo() {
     <p><strong>Author:</strong> ${lessonData.author}</p>
     <p><strong>Language:</strong> ${lessonData.language}</p>
     <hr>
-    <p>Lesson structure loaded successfully.</p>
+    <p><strong>Comment:</strong> ${lessonData.comment-loading}</p>
   `;
 }
 
