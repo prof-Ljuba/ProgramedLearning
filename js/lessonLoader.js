@@ -28,3 +28,13 @@ async function loadLesson(lessonPath, language) {
     alert("Greška pri učitavanju lekcije.");
   }
 }
+
+function renderLessonTitle() {
+  const titleEl = document.getElementById("lessonTitle");
+  const windowTitleEl = document.getElementById("windowTitle");
+
+  if (!currentLesson) return;
+
+  titleEl.textContent = currentLesson.naslov;
+  document.title = currentLesson.naslovProzora;
+}
