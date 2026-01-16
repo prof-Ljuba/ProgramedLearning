@@ -1,5 +1,5 @@
 let currentLanguage = "en";  //sr ili en za sada
-let currentLessonFile = "racunarstvo/en/computer_basics.json"; //racunarstvo/introductionComputerScience.json ili osnove_racunara.json ili computer_basics.json za sada
+let currentLessonFile = "en/computer_basics.json"; //racunarstvo/introductionComputerScience.json ili osnove_racunara.json ili computer_basics.json za sada
 let lessonData = null;
 
 // Učitaj lekciju iz JSON fajla
