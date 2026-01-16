@@ -11,7 +11,7 @@ async function loadLesson(language, lessonFile) {
     if (!response.ok) throw new Error("Lesson not found");
 
     lessonData = await response.json();
-    showLessonInfo();
+    //showLessonInfo();
     document.body.innerHTML = `<h1>${lessonData.title}</h1>`;
   } catch (error) {
     console.error(error);
@@ -32,5 +32,4 @@ function showLessonInfo() {
 // Init
 window.addEventListener("load", () => {
   loadLesson(currentLanguage, currentLessonFile);
-  showLessonInfo();
 });
