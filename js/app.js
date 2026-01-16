@@ -11,7 +11,7 @@ async function loadLesson(language, lessonFile) {
     if (!response.ok) throw new Error("Lesson not found");
 
     lessonData = await response.json();
-    showLessonInfo();
+    // showLessonInfo(); ovo vretiti pa testirati
   } catch (error) {
     console.error(error);
     alert("Lekcija ne može da se učita: " + path);
