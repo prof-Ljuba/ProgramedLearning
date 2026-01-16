@@ -12,6 +12,7 @@ async function loadLesson(language, lessonFile) {
 
     lessonData = await response.json();
     showLessonInfo();
+    document.body.innerHTML = `<h1>${lessonData.title}</h1>`;
   } catch (error) {
     console.error(error);
     alert("Lekcija ne može da se učita: " + path);
@@ -31,4 +32,5 @@ function showLessonInfo() {
 // Init
 window.addEventListener("load", () => {
   loadLesson(currentLanguage, currentLessonFile);
+  showLessonInfo();
 });
