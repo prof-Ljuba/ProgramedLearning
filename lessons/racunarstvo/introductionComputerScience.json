@@ -1,7 +1,6 @@
-  // --- PODACI LEKCIJE NA VIŠE JEZIKA (Srpski, English, Deutsch) ---
   {  // ---klasa lekcije... ovo nije niz već klasa, na pr. typeof lekcije[0] daje undefined, ali typeof lekcije["sr"] daje object
       //---------------------------------------------------------------------------------
-   id: "introductionComputerScience",
+  
     sr: 
     {   // --- klasa sr - lekcije i pitanja na sr. ---
       naslov: "Uvod u računarstvo i informatiku",
