@@ -21,11 +21,11 @@ async function loadLesson(language, lessonFile) {
 // Prikaži osnovne informacije (za početak)
 function showLessonInfo() {
   document.body.innerHTML = `
-    <h1>${lessonData.title}</h1>
-    <p><strong>Author:</strong> ${lessonData.author}</p>
-    <p><strong>Language:</strong> ${lessonData.language}</p>
+    <h1>${lessonData.sr.naslov}</h1>
+    <p><strong>Naslov prozora je:</strong> ${lessonData.sr.naslovProzora}</p>
+    <p><strong>Deo lekcije je:</strong> ${lessonData.sr.deloviLekcije[0]}</p>
     <hr>
-    <p><strong>Comment:</strong> ${lessonData.commentloading}</p>
+    
   `;
 }
 
