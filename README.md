@@ -61,15 +61,6 @@ But instead **understands the learner**.
 
 ---
 
-### ✅ Zašto je ovo dobro rešenje
-
-* ✔ profesionalno (kao ozbiljni open-source projekti)
-* ✔ jasno razdvaja **code** i **content**
-* ✔ pravno korektno (BY-NC jasno definisano)
-* ✔ razumljivo i domaćim i stranim nastavnicima
-* ✔ spremno za širenje projekta
-
----
 ---
 
 ## 🇷🇸 SRPSKI
@@ -128,6 +119,3 @@ Učenje koje:
 * ne žuri
 * ne opterećuje
 * ne isključuje, već **razume učenika**.
-
----
-
