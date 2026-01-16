@@ -1,21 +1,22 @@
 let currentLanguage = "en";  //sr ili en za sada
-let currentLessonFile = "en/computer_basics.json"; //racunarstvo/introductionComputerScience.json ili osnove_racunara.json ili computer_basics.json za sada
+let currentLessonFile = "computer_basics.json"; //osnove_racunara.json ili computer_basics.json za sada
 let lessonData = null;
 
 // Učitaj lekciju iz JSON fajla
 async function loadLesson(language, lessonFile) {
-  const path = `lessons/${lessonFile}`;
+  const path = `lessons/${language}/${lessonFile}`;
 
- try {
+  try {
     const response = await fetch(path);
-    if (!response.ok) throw new Error("Lesson not found");
+    if (!response.ok) {
+      throw new Error("Lesson not found");
+    }
 
     lessonData = await response.json();
-    //showLessonInfo();
-    document.body.innerHTML = `<h1>${lessonData.title}</h1>`;
+    showLessonInfo();
   } catch (error) {
-    console.error(error);
-    alert("Lekcija ne može da se učita: " + path);
+    console.error("Greška pri učitavanju lekcije:", error);
+    alert("Lekcija ne može da se učita.");
   }
 }
 
@@ -28,6 +29,7 @@ function showLessonInfo() {
     <hr>
     <p><strong>Comment:</strong> ${lessonData.commentloading}</p>
   `;
+}
 
 // Init
 window.addEventListener("load", () => {
