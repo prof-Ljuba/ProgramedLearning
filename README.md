@@ -30,8 +30,8 @@ Lessons and educational materials are licensed under:
 ## 👤 Author
 
 **Ljubiša Cvetić**
-Computer Science Teacher
-Hospitality & Tourism School
+Computer Science Teacher, 
+Hospitality & Tourism School, 
 Belgrade, Serbia
 
 ---
@@ -95,8 +95,8 @@ Lekcije i nastavni materijali su zaštićeni licencom:
 ## 👤 Autor
 
 **Ljubiša Cvetić**
-Profesor računarstva i informatike
-Ugostiteljsko-turistička škola
+Profesor računarstva i informatike, 
+Ugostiteljsko-turistička škola, 
 Beograd, Srbija
 
 ---
