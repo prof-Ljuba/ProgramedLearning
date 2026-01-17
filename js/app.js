@@ -33,7 +33,7 @@ function showLessonInfo() {
     <p><strong>id:</strong> ${lessonData.id}</p>
     <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
     <hr>
-    <p><strong>Comment:</strong> ${lessonData.sr.deloviLekcije.nazivDelaLekcije}</p>
+    <p><strong>sr.deloviLekcije.nazivDelaLekcije:</strong> ${lessonData.sr.deloviLekcije.nazivDelaLekcije}</p>
   `;
 }
 
