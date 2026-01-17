@@ -1,1369 +1,1323 @@
-  {  // ---klasa lekcije... ovo nije niz već klasa, na pr. typeof lekcije[0] daje undefined, ali typeof lekcije["sr"] daje object
-      //---------------------------------------------------------------------------------
-  
-    sr: 
-    {   // --- klasa sr - lekcije i pitanja na sr. ---
-      naslov: "Uvod u računarstvo i informatiku",
-      naslovProzora: "Programirano učenje",
+{
+    "sr": 
+    { 
+      "naslov": "Uvod u računarstvo i informatiku",
+      "naslovProzora": "Programirano učenje",
       
-      deloviLekcije: // NOVO !!!
-      [   //jednodim. niza deloviLekcije[i], članovi su mu klase {}, {},... Svaka od tih klasa sadrži prvo nazivDelaLekcije, pa niz teorija[] kome su clanovi klase, pa niz pitanja[] kome su clanovi klase
-       { //pocinje deloviLekcije[0] 
-         nazivDelaLekcije: "Podatak i informacija", 
-         teorija:     //...svaka od tih klasa sadrzi dva niza: teorija[] i pitanja[]
-         [   //teorija[] je niz. Elementi su mu 1 ili nekoliko kratkih delova lekcije, posle kojih počinje kviz pitanja[] (poželjno sa diferenciranim pristupom, zbog razgranatog programiranog ucenja, mada se pomocu ove aplikacije moze kreirati i lonearno progr. ucenje)
+      "deloviLekcije": 
+      [   
+       { 
+         "nazivDelaLekcije": "Podatak i informacija", 
+         "teorija":     
+         [  
            {
-             tekst: "Podatak je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola.<br><br>Na primer, podatak je broj 4 . Podatak se može tumačiti na različite načine. Broj 4 može predstavljati ocenu učenika ili udaljenost od 4 kilometra i drugo.",
-             slika: "images/podatak50.png",
-             video: "",
+             "tekst": "Podatak je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola.<br><br>Na primer, podatak je broj 4 . Podatak se može tumačiti na različite načine. Broj 4 može predstavljati ocenu učenika ili udaljenost od 4 kilometra i drugo.",
+             "slika": "images/podatak50.png",
+             "video": ""
            },
            {
-             tekst: "Informacija je skup podataka koji su protumačeni na neki način.<br><br>Na primer: \"Petar je dobio ocenu 5 iz geografije.\" U ovoj rečenici je broju 5 dat smisao, broj 5 je protumačen, pa je to informacija.<br>50 - podatak. Masa tega je 50kg - informacija.",
-             slika: "images/informacija.png",
-             video: "",
+             "tekst": "Informacija je skup podataka koji su protumačeni na neki način.<br><br>Na primer: \"Petar je dobio ocenu 5 iz geografije.\" U ovoj rečenici je broju 5 dat smisao, broj 5 je protumačen, pa je to informacija.<br>50 - podatak. Masa tega je 50kg - informacija.",
+             "slika": "images/informacija.png",
+             "video": ""
            }
-         ],  //kraj niza teorija[]
+         ],
 
-         pitanja: 
-         [   //pitanja[] je niz. Elementi su mu pitanja[] (poželjno više pitanja SA DIFERENCIRANIM PRISTUPOM)
-           {
-             redni: 0,
-             tekst: "Šta je podatak?",
-             slika: "",
-             odgovori: ["To je kada znamo da je neko rastojanje 4 kilometra.", "To je, na primer, kada znamo da je Petar dobio 5 iz geografije.", "To je skup podataka koji su protumačeni na neki način.", "To je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 2, 3]
-           },
-           {
-             redni: 1,
-             tekst: "Izaberite primer podatka među ponuđenim opcijama.",
-             slika: "",
-             odgovori: ["Broj 3 je veći od broja 2.", "Zbir brojeva 3 i 2 je jednak 5.", "Inform@t!k@12345", "Francuska je u Evropi"],
-             tacni: [false, false, true, false],
-             grananje: [2, 2, 3, 2]
-           },
-           {
-             redni: 2,
-             tekst: "Izaberite primer podatka među ponuđenim opcijama.",
-             slika: "",
-             odgovori: ["Petar dobio 5 iz geografije.", "4", "Obrazovanje je korisno.", "Sada odgovaram na pitanja."],
-             tacni: [false, true, false, false],
-             grananje: [-1, 3, -1, -1]           //kada je negativan broj, npr. -1, ide opet da čita teoriju
-           },
-           {
-             redni: 3,
-             tekst: "Izaberite primer informacije među ponuđenim opcijama.",
-             slika: "images/informacija_mala.png",
-             odgovori: ["4", "podatak", "Broj Pi, tj. &pi; u matematici ima približnu vrednost 3.14", "Napajanje"],
-             tacni: [false, false, true, false],
-             grananje: [4, 4, 6, 4]
-           },
-           {
-             redni: 4,
-             tekst: "Šta je informacija?",
-             slika: "images/informacija_mala.png",
-             odgovori: ["To je skup podataka koji su protumačeni na neki način.", "5", "50", "To je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola."],
-             tacni: [true, false, false, false],
-             grananje: [6, 5, 5, 5]  //Kada postane 6 onda je kraj testa
-           },
-           {
-             redni: 5,
-             tekst: "Izaberite primer informacije među ponuđenim opcijama.",
-             slika: "",
-             odgovori: ["5", "0.142857", "Milan je dobio ocenu 5 iz engleskog jezika.", "2E+77232917-1"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 6, -1]  //Kada postane 6 onda je kraj testa, kada je negativan broj, npr. -1, ide opet da čita teoriju, isti deo lekcije, pa pitanja 
-           }
-         ],  //kraj niza pitanja[]
-       },//kraj klase deloviLekcije[0], to je klasa koja sadrzi dva niza teorija[] i pitanja[]   
-  
-    
-       {   //početak deloviLekcije[1], to je niz koja sadrži nazivDelaLekcije: "",dva niza: teorija[] i pitanja[]
-         nazivDelaLekcije: "Računarstvo i informatika",
-         teorija: 
+         "pitanja": 
          [
            {
-             tekst: "Informatika se bavi prikupljanjem, čuvanjem, obradom i prenosom informacija, kao i primenom računara u raznim oblastima.",
-             slika: "images/informatika.png",
-             video: "",
+             "redni": 0,
+             "tekst": "Šta je podatak?",
+             "slika": "",
+             "odgovori": ["To je kada znamo da je neko rastojanje 4 kilometra.", "To je, na primer, kada znamo da je Petar dobio 5 iz geografije.", "To je skup podataka koji su protumačeni na neki način.", "To je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 2, 3]
            },
            {
-             tekst: "Računarstvo se bavi proučavanjem teorije i prakse procesa računanja. (udžbenik za 1. razred (Filip Marić))<br><br>Računarstvo se bavi proučavanjem računarskih sistema i teorije informacije i računanja, i njihovim primenama.(Britannica)",
-             slika: "images/racunarstvo.png",
-             video: "",
+             "redni": 1,
+             "tekst": "Izaberite primer podatka među ponuđenim opcijama.",
+             "slika": "",
+             "odgovori": ["Broj 3 je veći od broja 2.", "Zbir brojeva 3 i 2 je jednak 5.", "Inform@t!k@12345", "Francuska je u Evropi"],
+             "tacni": [false, false, true, false],
+             "grananje": [2, 2, 3, 2]
+           },
+           {
+             "redni": 2,
+             "tekst": "Izaberite primer podatka među ponuđenim opcijama.",
+             "slika": "",
+             "odgovori": ["Petar dobio 5 iz geografije.", "4", "Obrazovanje je korisno.", "Sada odgovaram na pitanja."],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 3, -1, -1]
+           },
+           {
+             "redni": 3,
+             "tekst": "Izaberite primer informacije među ponuđenim opcijama.",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["4", "podatak", "Broj Pi, tj. &pi; u matematici ima približnu vrednost 3.14", "Napajanje"],
+             "tacni": [false, false, true, false],
+             "grananje": [4, 4, 6, 4]
+           },
+           {
+             "redni": 4,
+             "tekst": "Šta je informacija?",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["To je skup podataka koji su protumačeni na neki način.", "5", "50", "To je zapis činjenice, najčešće sastavljen od brojeva, slova ili simbola."],
+             "tacni": [true, false, false, false],
+             "grananje": [6, 5, 5, 5] 
+           },
+           {
+             "redni": 5,
+             "tekst": "Izaberite primer informacije među ponuđenim opcijama.",
+             "slika": "",
+             "odgovori": ["5", "0.142857", "Milan je dobio ocenu 5 iz engleskog jezika.", "2E+77232917-1"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 6, -1]
            }
-         ],  //kraj niza teorija[]
-
-         pitanja: [
+         ]
+       },
+  
+    
+       { 
+         "nazivDelaLekcije": "Računarstvo i informatika",
+         "teorija": 
+         [
            {
-             redni: 0,
-             tekst: "Dopuniti rečenicu:________________________ se bavi prikupljanjem, čuvanjem, obradom i prenosom informacija, kao i primenom računara u raznim oblastima.",
-             slika: "",
-             odgovori: ["Računarstvo", "Informatika", "Računar", "Informacija"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 1, -1, -1]
+             "tekst": "Informatika se bavi prikupljanjem, čuvanjem, obradom i prenosom informacija, kao i primenom računara u raznim oblastima.",
+             "slika": "images/informatika.png",
+             "video": ""
            },
            {
-             redni: 1,
-             tekst: "Dopuniti rečenicu: ________________________ se bavi proučavanjem teorije i prakse procesa računanja.",
-             slika: "",
-             odgovori: ["Računarstvo", "Prenos informacija", "Informatika", "Računarski sistem"],
-             tacni: [true, false, false, false],
-             grananje: [3, 2, 2, 2]
-           },
-           {
-             redni: 2,
-             tekst: "Dopuniti rečenicu: ________________________ se bavi proučavanjem računarskih sistema i teorije informacije i računanja, i njihovim primenama.",
-             slika: "",
-             odgovori: ["Informatika", "Prenos informacija", "Računarstvo", "Računarski sistem"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 3, -1]  //Kada postane 3 onda je kraj testa
+             "tekst": "Računarstvo se bavi proučavanjem teorije i prakse procesa računanja. (udžbenik za 1. razred (Filip Marić))<br><br>Računarstvo se bavi proučavanjem računarskih sistema i teorije informacije i računanja, i njihovim primenama.(Britannica)",
+             "slika": "images/racunarstvo.png",
+             "video": ""
            }
-         ],  //kraj niza pitanja[]
-       },//kraj klase koja je deloviLekcije[1]
+         ],
 
-
-       {   //početak deloviLekcije[2]
-         nazivDelaLekcije: "Računar (računarski sistem, kompjuter)",
-         teorija: [
+         "pitanja": [
            {
-             tekst: "Računar (računarski sistem, kompjuter) je mašina koja se može programirati za obavljanje različitih vrsta zadataka. On obrađuje i čuva informacije.<br><br>Ovaj pojam uključuje i desktop i prenosne (notebook, laptop) računare, pametne telefone (smartphones), tablete, ugrađene (embedded) računare u automobilima, avionima, frižiderima itd.",
-             slika: "",   //"images/computers.png",
-             video: "videos/Embedded-Compurs.mp4",
-           }
-         ],  //kraj niza teorija[]
-
-         pitanja: [
-           {
-             redni: 0,
-             tekst: "Šta je računar (računarski sistem, kompjuter)?",
-             slika: "images/computers_small.png",
-             odgovori: ["To je skup komponenti", "To je isto šta i informatika", "Računar se bavi prikupljanjem podataka.", "To je mašina koji se može programirati za obavljanje različitih vrsta zadataka."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 1, 2]
+             "redni": 0,
+             "tekst": "Dopuniti rečenicu:________________________ se bavi prikupljanjem, čuvanjem, obradom i prenosom informacija, kao i primenom računara u raznim oblastima.",
+             "slika": "",
+             "odgovori": ["Računarstvo", "Informatika", "Računar", "Informacija"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 1, -1, -1]
            },
            {
-             redni: 1,
-             tekst: "Dopuniti rečenicu: ________________________ je mašina koja se može programirati za obavljanje različitih vrsta zadataka.",
-             slika: "images/computers_small.png",
-             odgovori: ["Informatika", "Računar", "Računarstvo", "Informacija"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 2, -1, -1]
+             "redni": 1,
+             "tekst": "Dopuniti rečenicu: ________________________ se bavi proučavanjem teorije i prakse procesa računanja.",
+             "slika": "",
+             "odgovori": ["Računarstvo", "Prenos informacija", "Informatika", "Računarski sistem"],
+             "tacni": [true, false, false, false],
+             "grananje": [3, 2, 2, 2]
            },
            {
-             redni: 2,
-             tekst: "Šta podrazumeva pojam računara?",
-             slika: "",
-             odgovori: ["Ovaj pojam uključuje i desktop i prenosne (notebook, laptop) računare, pametne telefone (smartphones), tablete, ugrađene (embedded) računare itd.", "Ovaj pojam uključuje samo desktop kompjutere.", "Ovaj pojam uključuje samo laptop računare.", "Uključuje samo laptop i tablet"],
-             tacni: [true, false, false, false],
-             grananje: [3, -1, -1, -1]  //Kada postane 3 onda je kraj testa
+             "redni": 2,
+             "tekst": "Dopuniti rečenicu: ________________________ se bavi proučavanjem računarskih sistema i teorije informacije i računanja, i njihovim primenama.",
+             "slika": "",
+             "odgovori": ["Informatika", "Prenos informacija", "Računarstvo", "Računarski sistem"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 3, -1]
            }
-         ],  //kraj niza pitanja[]
-       }//kraj klase koja je deloviLekcije[2]
- 
-       //-----------OVDE po zelji NASTAVITI sa deloviLekcije[3] na SR, tj. teorija/pitanja. Onda deloviLekcije[4], tj. teorija/pitanja na srpskom -----------
+         ]
+       },
 
-      ],  //kraj jednodim. niza deloviLekcije[]  
-      //KRAJ PREDAVANJA NA SRPSKOM, dovde su teorija i pitanja srpskom, a class sr: se nastavlja i ispod
 
-    },   //za klasu SR: - lekcije, pitanja i korisnički interfejs na sr. ---
+       { 
+         "nazivDelaLekcije": "Računar (računarski sistem, kompjuter)",
+         "teorija": [
+           {
+             "tekst": "Računar (računarski sistem, kompjuter) je mašina koja se može programirati za obavljanje različitih vrsta zadataka. On obrađuje i čuva informacije.<br><br>Ovaj pojam uključuje i desktop i prenosne (notebook, laptop) računare, pametne telefone (smartphones), tablete, ugrađene (embedded) računare u automobilima, avionima, frižiderima itd.",
+             "slika": "", 
+             "video": "videos/Embedded-Compurs.mp4"
+           }
+         ],
+
+         "pitanja": [
+           {
+             "redni": 0,
+             "tekst": "Šta je računar (računarski sistem, kompjuter)?",
+             "slika": "images/computers_small.png",
+             "odgovori": ["To je skup komponenti", "To je isto šta i informatika", "Računar se bavi prikupljanjem podataka.", "To je mašina koji se može programirati za obavljanje različitih vrsta zadataka."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 1, 2]
+           },
+           {
+             "redni": 1,
+             "tekst": "Dopuniti rečenicu: ________________________ je mašina koja se može programirati za obavljanje različitih vrsta zadataka.",
+             "slika": "images/computers_small.png",
+             "odgovori": ["Informatika", "Računar", "Računarstvo", "Informacija"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 2, -1, -1]
+           },
+           {
+             "redni": 2,
+             "tekst": "Šta podrazumeva pojam računara?",
+             "slika": "",
+             "odgovori": ["Ovaj pojam uključuje i desktop i prenosne (notebook, laptop) računare, pametne telefone (smartphones), tablete, ugrađene (embedded) računare itd.", "Ovaj pojam uključuje samo desktop kompjutere.", "Ovaj pojam uključuje samo laptop računare.", "Uključuje samo laptop i tablet"],
+             "tacni": [true, false, false, false],
+             "grananje": [3, -1, -1, -1]
+           }
+         ]
+       } 
+      ]
+    },
     
       
-    	//----Odavde je ENGLESKI --------------------------------------------------------------------------------------------------------------
-    //POČETAK NA ENGLESKOM, ispod ide klasa en: uključujući predavanja i pitanja
-    en: 
-    {   // --- class en - lessons, questions in English ---
-      naslov: "Introduction to Computer Science and Informatics",
-      naslovProzora: "Programmed Learning",
+    "en": 
+    {
+      "naslov": "Introduction to Computer Science and Informatics",
+      "naslovProzora": "Programmed Learning",
       
-      deloviLekcije:
+      "deloviLekcije":
       [
-       { //start deloviLekcije[0] 
-         nazivDelaLekcije: "Data and Information", 
-         teorija:     
+       {
+         "nazivDelaLekcije": "Data and Information", 
+         "teorija":     
          [
            {
-             tekst: "A data item is a record of a fact, usually consisting of numbers, letters, or symbols.<br><br>For example, the number 4 is a data item. A data item can be interpreted in different ways. The number 4 may represent a student’s grade, a distance of 4 kilometers, etc.",
-             slika: "images/podatak50.png",
-             video: "",
+             "tekst": "A data item is a record of a fact, usually consisting of numbers, letters, or symbols.<br><br>For example, the number 4 is a data item. A data item can be interpreted in different ways. The number 4 may represent a student’s grade, a distance of 4 kilometers, etc.",
+             "slika": "images/podatak50.png",
+             "video": ""
            },
            {
-             tekst: "Information is a set of data that has been interpreted in some way.<br><br>For example: \"Peter got a grade 5 in geography.\" In this sentence, the number 5 is given meaning — it has been interpreted — and that makes it information.<br>50 - data. The mass of the weight is 50kg - information.",
-             slika: "images/data-information.png",
-             video: "",
+             "tekst": "Information is a set of data that has been interpreted in some way.<br><br>For example: \"Peter got a grade 5 in geography.\" In this sentence, the number 5 is given meaning — it has been interpreted — and that makes it information.<br>50 - data. The mass of the weight is 50kg - information.",
+             "slika": "images/data-information.png",
+             "video": ""
            }
          ],  
          
-         pitanja: 
+         "pitanja": 
          [
            {
-             redni: 0,
-             tekst: "What is data?",
-             slika: "images/podatak50.png",
-             odgovori: [
+             "redni": 0,
+             "tekst": "What is data?",
+             "slika": "images/podatak50.png",
+             "odgovori": [
                "It is when we know that some distance is 4 kilometers.", 
                "It is, for example, when we know that Peter got a grade 5 in geography.", 
                "It is a set of data that has been interpreted in some way.", 
                "It is a record of a fact, usually consisting of numbers, letters, or symbols."
              ],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 2, 3]
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 2, 3]
            },
            {
-             redni: 1,
-             tekst: "Choose the example of data among the options below.",
-             slika: "",
-             odgovori: ["The number 3 is greater than 2.", "The sum of 3 and 2 equals 5.", "Inform@t!k@12345", "France is in Europe"],
-             tacni: [false, false, true, false],
-             grananje: [2, 2, 3, 2]
+             "redni": 1,
+             "tekst": "Choose the example of data among the options below.",
+             "slika": "",
+             "odgovori": ["The number 3 is greater than 2.", "The sum of 3 and 2 equals 5.", "Inform@t!k@12345", "France is in Europe"],
+             "tacni": [false, false, true, false],
+             "grananje": [2, 2, 3, 2]
            },
            {
-             redni: 2,
-             tekst: "Choose the example of data among the options below.",
-             slika: "",
-             odgovori: ["Peter got grade 5 in geography.", "4", "Education is useful.", "I am now answering questions."],
-             tacni: [false, true, false, false],
-             grananje: [-1, 3, -1, -1]
+             "redni": 2,
+             "tekst": "Choose the example of data among the options below.",
+             "slika": "",
+             "odgovori": ["Peter got grade 5 in geography.", "4", "Education is useful.", "I am now answering questions."],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 3, -1, -1]
            },
            {
-             redni: 3,
-             tekst: "Choose the example of information among the options below.",
-             slika: "images/data-information-small.png",
-             odgovori: ["4", "data", "The number Pi, i.e. &pi; in mathematics, has an approximate value of 3.14", "Power supply"],
-             tacni: [false, false, true, false],
-             grananje: [4, 4, 6, 4]
+             "redni": 3,
+             "tekst": "Choose the example of information among the options below.",
+             "slika": "images/data-information-small.png",
+             "odgovori": ["4", "data", "The number Pi, i.e. &pi; in mathematics, has an approximate value of 3.14", "Power supply"],
+             "tacni": [false, false, true, false],
+             "grananje": [4, 4, 6, 4]
            },
            {
-             redni: 4,
-             tekst: "What is information?",
-             slika: "images/data-information-small.png",
-             odgovori: ["It is a set of data that has been interpreted in some way.", "5", "50", "It is a record of a fact, usually consisting of numbers, letters, or symbols."],
-             tacni: [true, false, false, false],
-             grananje: [6, 5, 5, 5]
+             "redni": 4,
+             "tekst": "What is information?",
+             "slika": "images/data-information-small.png",
+             "odgovori": ["It is a set of data that has been interpreted in some way.", "5", "50", "It is a record of a fact, usually consisting of numbers, letters, or symbols."],
+             "tacni": [true, false, false, false],
+             "grananje": [6, 5, 5, 5]
            },
            {
-             redni: 5,
-             tekst: "Choose the example of information among the options below.",
-             slika: "",
-             odgovori: ["5", "0.142857", "Milan received grade 5 in English.", "2E+77232917-1"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 6, -1]
+             "redni": 5,
+             "tekst": "Choose the example of information among the options below.",
+             "slika": "",
+             "odgovori": ["5", "0.142857", "Milan received grade 5 in English.", "2E+77232917-1"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 6, -1]
            }
          ]  
-       }, //end deloviLekcije[0]
+       },
        
-       { //start deloviLekcije[1]
-         nazivDelaLekcije: "Computer Science and Informatics",
-         teorija: 
+       {
+         "nazivDelaLekcije": "Computer Science and Informatics",
+         "teorija": 
          [
            {
-             tekst: "Informatics is the science of information, the practice of information processing, and the engineering of information systems. Informatics studies the structure, algorithms, behavior, and interactions of natural and artificial systems that store, process, access and communicate information.",
-             slika: "images/informatika.png",
-             video: "",
+             "tekst": "Informatics is the science of information, the practice of information processing, and the engineering of information systems. Informatics studies the structure, algorithms, behavior, and interactions of natural and artificial systems that store, process, access and communicate information.",
+             "slika": "images/informatika.png",
+             "video": ""
            },
            {
-             tekst: "Computer science deals with studying the theory and practice of computing processes.<br><br>Computer science is the study of computers and computing as well as their theoretical and practical applications. (Britannica)",
-             slika: "images/racunarstvo.png",
-             video: "",
+             "tekst": "Computer science deals with studying the theory and practice of computing processes.<br><br>Computer science is the study of computers and computing as well as their theoretical and practical applications. (Britannica)",
+             "slika": "images/racunarstvo.png",
+             "video": ""
            }
          ],  
          
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "Complete the sentence: ________________________ is the science of information, the practice of information processing, and the engineering of information systems. Informatics studies the structure, algorithms, behavior, and interactions of natural and artificial systems that store, process, access and communicate information.",
-             slika: "",
-             odgovori: ["Computer Science", "Informatics", "Computer", "Information"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 1, -1, -1]
+             "redni": 0,
+             "tekst": "Complete the sentence: ________________________ is the science of information, the practice of information processing, and the engineering of information systems. Informatics studies the structure, algorithms, behavior, and interactions of natural and artificial systems that store, process, access and communicate information.",
+             "slika": "",
+             "odgovori": ["Computer Science", "Informatics", "Computer", "Information"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 1, -1, -1]
            },
            {
-             redni: 1,
-             tekst: "Complete the sentence: ________________________ deals with studying the theory and practice of computing processes.",
-             slika: "",
-             odgovori: ["Computer Science", "Information transmission", "Informatics", "Computer system"],
-             tacni: [true, false, false, false],
-             grananje: [3, 2, 2, 2]
+             "redni": 1,
+             "tekst": "Complete the sentence: ________________________ deals with studying the theory and practice of computing processes.",
+             "slika": "",
+             "odgovori": ["Computer Science", "Information transmission", "Informatics", "Computer system"],
+             "tacni": [true, false, false, false],
+             "grananje": [3, 2, 2, 2]
            },
            {
-             redni: 2,
-             tekst: "Complete the sentence: ________________________ deals with studying of computers and computing as well as their theoretical and practical applications.",
-             slika: "",
-             odgovori: ["Informatics", "Information transmission", "Computer Science", "Computer system"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 3, -1]
+             "redni": 2,
+             "tekst": "Complete the sentence: ________________________ deals with studying of computers and computing as well as their theoretical and practical applications.",
+             "slika": "",
+             "odgovori": ["Informatics", "Information transmission", "Computer Science", "Computer system"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 3, -1]
            }
          ]  
-       }, //end deloviLekcije[1]
+       },
        
-       { //start deloviLekcije[2]
-         nazivDelaLekcije: "Computer (computer system, PC)",
-         teorija: [
+       {
+         "nazivDelaLekcije": "Computer (computer system, PC)",
+         "teorija": [
            {
-             tekst: "A computer (computer system, PC) is a machine that can be programmed to perform different kinds of tasks. It processes and stores information.<br><br>This concept includes desktop and portable (notebook, laptop) computers, smartphones, tablets, and embedded computers in cars, airplanes, refrigerators, etc.",
-             slika: "",   //"images/computers.png",
-             video: "videos/Embedded-Compurs.mp4",
+             "tekst": "A computer (computer system, PC) is a machine that can be programmed to perform different kinds of tasks. It processes and stores information.<br><br>This concept includes desktop and portable (notebook, laptop) computers, smartphones, tablets, and embedded computers in cars, airplanes, refrigerators, etc.",
+             "slika": "",
+             "video": "videos/Embedded-Compurs.mp4"
            }
          ],  
          
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "What is a computer (computer system, PC)?",
-             slika: "images/computers_small.png",
-             odgovori: ["It is a set of components.", "It is the same as informatics.", "A computer deals with collecting data.", "It is a machine that can be programmed to perform different kinds of tasks."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 1, 2]
+             "redni": 0,
+             "tekst": "What is a computer (computer system, PC)?",
+             "slika": "images/computers_small.png",
+             "odgovori": ["It is a set of components.", "It is the same as informatics.", "A computer deals with collecting data.", "It is a machine that can be programmed to perform different kinds of tasks."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 1, 2]
            },
            {
-             redni: 1,
-             tekst: "Complete the sentence: ________________________ is a machine that can be programmed to perform different kinds of tasks.",
-             slika: "images/computers_small.png",
-             odgovori: ["Informatics", "Computer", "Computer Science", "Information"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 2, -1, -1]
+             "redni": 1,
+             "tekst": "Complete the sentence: ________________________ is a machine that can be programmed to perform different kinds of tasks.",
+             "slika": "images/computers_small.png",
+             "odgovori": ["Informatics", "Computer", "Computer Science", "Information"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 2, -1, -1]
            },
            {
-             redni: 2,
-             tekst: "What does the term computer include?",
-             slika: "",
-             odgovori: ["This term includes desktop and portable (notebook, laptop) computers, smartphones, tablets, embedded computers, etc.", "This term includes only desktop computers.", "This term includes only laptop computers.", "It includes only laptops and tablets."],
-             tacni: [true, false, false, false],
-             grananje: [3, -1, -1, -1]
+             "redni": 2,
+             "tekst": "What does the term computer include?",
+             "slika": "",
+             "odgovori": ["This term includes desktop and portable (notebook, laptop) computers, smartphones, tablets, embedded computers, etc.", "This term includes only desktop computers.", "This term includes only laptop computers.", "It includes only laptops and tablets."],
+             "tacni": [true, false, false, false],
+             "grananje": [3, -1, -1, -1]
            }
          ]  
-       } //end deloviLekcije[2]
+       }
        
-       //----------- To be CONTINUED with deloviLekcije[3] in English, just like above -----------
-      ],  
-           
-      //KRAJ PREDAVANJA NA ENGLESKOM, dovde su teorija i pitanja engl, ali class en: se nastavlja i ispod
+      ] 
          
-    },   //za klasu EN: - lekcije i pitanja na en. ---
+    },
+    
 
-       //------Odavde pa na gore ENGLESKI 
-       //------Odavde pa na dole je NEMAČKI
+    "de": 
+    {
+      "naslov": "Einführung in die Informatik und Computerwissenschaft",
+      "naslovProzora": "Programmiertes Lernen",
     
-    //----Hier beginnt DEUTSCH --------------------------------------------------------------------------------------------------------------
-    de: 
-    {   // --- Klasse de - Lektionen, Fragen und Benutzeroberfläche auf Deutsch ---
-      naslov: "Einführung in die Informatik und Computerwissenschaft",
-      naslovProzora: "Programmiertes Lernen",
-    
-      deloviLekcije:
+      "deloviLekcije":
       [
-       { //Start deloviLekcije[0] 
-         nazivDelaLekcije: "Daten und Informationen", 
-         teorija:     
+       {
+         "nazivDelaLekcije": "Daten und Informationen", 
+         "teorija":     
          [
            {
-             tekst: "Ein Datum ist eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht.<br><br>Zum Beispiel ist die Zahl 4 ein Datum. Ein Datum kann auf verschiedene Arten interpretiert werden. Die Zahl 4 kann eine Schulnote, eine Entfernung von 4 Kilometern usw. darstellen.",
-             slika: "images/podatak50.png",
-             video: "",
+             "tekst": "Ein Datum ist eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht.<br><br>Zum Beispiel ist die Zahl 4 ein Datum. Ein Datum kann auf verschiedene Arten interpretiert werden. Die Zahl 4 kann eine Schulnote, eine Entfernung von 4 Kilometern usw. darstellen.",
+             "slika": "images/podatak50.png",
+             "video": ""
            },
            {
-             tekst: "Information ist eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.<br><br>Zum Beispiel: \"Peter hat in Geografie die Note 5 bekommen.\" In diesem Satz wird der Zahl 5 eine Bedeutung gegeben – sie wurde interpretiert – und das macht sie zu einer Information.<br>50 - Daten. Die Masse des Gewichts beträgt 50 kg - Information.",
-             slika: "images/informacija.png",
-             video: "",
+             "tekst": "Information ist eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.<br><br>Zum Beispiel: \"Peter hat in Geografie die Note 5 bekommen.\" In diesem Satz wird der Zahl 5 eine Bedeutung gegeben – sie wurde interpretiert – und das macht sie zu einer Information.<br>50 - Daten. Die Masse des Gewichts beträgt 50 kg - Information.",
+             "slika": "images/informacija.png",
+             "video": ""
            }
          ],  
      
-         pitanja: 
+         "pitanja": 
          [
            {
-             redni: 0,
-             tekst: "Was sind Daten?",
-             slika: "images/podatak50.png",
-             odgovori: ["Wenn wir wissen, dass eine Entfernung 4 Kilometer beträgt.", "Zum Beispiel, wenn wir wissen, dass Peter in Geografie die Note 5 bekommen hat.", "Eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.", "Eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 2, 3]
+             "redni": 0,
+             "tekst": "Was sind Daten?",
+             "slika": "images/podatak50.png",
+             "odgovori": ["Wenn wir wissen, dass eine Entfernung 4 Kilometer beträgt.", "Zum Beispiel, wenn wir wissen, dass Peter in Geografie die Note 5 bekommen hat.", "Eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.", "Eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 2, 3]
            },
            {
-             redni: 1,
-             tekst: "Wählen Sie das Beispiel für Daten aus den untenstehenden Optionen.",
-             slika: "",
-             odgovori: ["Die Zahl 3 ist größer als 2.", "Die Summe von 3 und 2 ist gleich 5.", "Inform@t!k@12345", "Frankreich liegt in Europa"],
-             tacni: [false, false, true, false],
-             grananje: [2, 2, 3, 2]
+             "redni": 1,
+             "tekst": "Wählen Sie das Beispiel für Daten aus den untenstehenden Optionen.",
+             "slika": "",
+             "odgovori": ["Die Zahl 3 ist größer als 2.", "Die Summe von 3 und 2 ist gleich 5.", "Inform@t!k@12345", "Frankreich liegt in Europa"],
+             "tacni": [false, false, true, false],
+             "grananje": [2, 2, 3, 2]
            },
            {
-             redni: 2,
-             tekst: "Wählen Sie das Beispiel für Daten aus den untenstehenden Optionen.",
-             slika: "",
-             odgovori: ["Peter hat in Geografie die Note 5 bekommen.", "4", "Bildung ist nützlich.", "Ich beantworte gerade Fragen."],
-             tacni: [false, true, false, false],
-             grananje: [-1, 3, -1, -1]
+             "redni": 2,
+             "tekst": "Wählen Sie das Beispiel für Daten aus den untenstehenden Optionen.",
+             "slika": "",
+             "odgovori": ["Peter hat in Geografie die Note 5 bekommen.", "4", "Bildung ist nützlich.", "Ich beantworte gerade Fragen."],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 3, -1, -1]
            },
            {
-             redni: 3,
-             tekst: "Wählen Sie das Beispiel für Information aus den untenstehenden Optionen.",
-             slika: "images/informacija_mala.png",
-             odgovori: ["4", "Daten", "Die Zahl Pi, d. h. &pi; in der Mathematik, hat einen ungefähren Wert von 3.14", "Stromversorgung"],
-             tacni: [false, false, true, false],
-             grananje: [4, 4, 6, 4]
+             "redni": 3,
+             "tekst": "Wählen Sie das Beispiel für Information aus den untenstehenden Optionen.",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["4", "Daten", "Die Zahl Pi, d. h. &pi; in der Mathematik, hat einen ungefähren Wert von 3.14", "Stromversorgung"],
+             "tacni": [false, false, true, false],
+             "grananje": [4, 4, 6, 4]
            },
            {
-             redni: 4,
-             tekst: "Was ist Information?",
-             slika: "images/informacija_mala.png",
-             odgovori: ["Eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.", "5", "50", "Eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht."],
-             tacni: [true, false, false, false],
-             grananje: [6, 5, 5, 5]
+             "redni": 4,
+             "tekst": "Was ist Information?",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["Eine Menge von Daten, die auf eine bestimmte Weise interpretiert wurden.", "5", "50", "Eine Aufzeichnung einer Tatsache, die normalerweise aus Zahlen, Buchstaben oder Symbolen besteht."],
+             "tacni": [true, false, false, false],
+             "grananje": [6, 5, 5, 5]
            },
            {
-             redni: 5,
-             tekst: "Wählen Sie das Beispiel für Information aus den untenstehenden Optionen.",
-             slika: "",
-             odgovori: ["5", "0.142857", "Milan hat in Englisch die Note 5 bekommen.", "2E+77232917-1"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 6, -1]
+             "redni": 5,
+             "tekst": "Wählen Sie das Beispiel für Information aus den untenstehenden Optionen.",
+             "slika": "",
+             "odgovori": ["5", "0.142857", "Milan hat in Englisch die Note 5 bekommen.", "2E+77232917-1"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 6, -1]
            }
-         ],  
-       }, //Ende deloviLekcije[0]
+         ]
+       },
        
-       { //Start deloviLekcije[1]
-         nazivDelaLekcije: "Informatik und Computerwissenschaft",
-         teorija: 
+       {
+         "nazivDelaLekcije": "Informatik und Computerwissenschaft",
+         "teorija": 
          [
            {
-             tekst: "Die Informatik ist die Wissenschaft von der Information, die Praxis der Informationsverarbeitung und die Technik der Informationssysteme. Sie untersucht die Struktur, Algorithmen, das Verhalten und die Interaktionen natürlicher und künstlicher Systeme, die Informationen speichern, verarbeiten, zugreifen und kommunizieren.",
-             slika: "images/informatika.png",
-             video: "",
+             "tekst": "Die Informatik ist die Wissenschaft von der Information, die Praxis der Informationsverarbeitung und die Technik der Informationssysteme. Sie untersucht die Struktur, Algorithmen, das Verhalten und die Interaktionen natürlicher und künstlicher Systeme, die Informationen speichern, verarbeiten, zugreifen und kommunizieren.",
+             "slika": "images/informatika.png",
+             "video": ""
            },
            {
-             tekst: "Die Computerwissenschaft beschäftigt sich mit dem Studium der Theorie und Praxis von Rechenprozessen.<br><br>Die Computerwissenschaft ist das Studium von Computern und dem Rechnen sowie ihrer theoretischen und praktischen Anwendungen. (Britannica)",
-             slika: "images/racunarstvo.png",
-             video: "",
+             "tekst": "Die Computerwissenschaft beschäftigt sich mit dem Studium der Theorie und Praxis von Rechenprozessen.<br><br>Die Computerwissenschaft ist das Studium von Computern und dem Rechnen sowie ihrer theoretischen und praktischen Anwendungen. (Britannica)",
+             "slika": "images/racunarstvo.png",
+             "video": ""
            }
          ],  
      
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "Vervollständigen Sie den Satz: ________________________ ist die Wissenschaft von der Information, die Praxis der Informationsverarbeitung und die Technik der Informationssysteme. Die Informatik untersucht die Struktur, Algorithmen, das Verhalten und die Interaktionen natürlicher und künstlicher Systeme, die Informationen speichern, verarbeiten, zugreifen und kommunizieren.",
-             slika: "",
-             odgovori: ["Computerwissenschaft", "Informatik", "Computer", "Information"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 1, -1, -1]
+             "redni": 0,
+             "tekst": "Vervollständigen Sie den Satz: ________________________ ist die Wissenschaft von der Information, die Praxis der Informationsverarbeitung und die Technik der Informationssysteme. Die Informatik untersucht die Struktur, Algorithmen, das Verhalten und die Interaktionen natürlicher und künstlicher Systeme, die Informationen speichern, verarbeiten, zugreifen und kommunizieren.",
+             "slika": "",
+             "odgovori": ["Computerwissenschaft", "Informatik", "Computer", "Information"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 1, -1, -1]
            },
            {
-             redni: 1,
-             tekst: "Vervollständigen Sie den Satz: ________________________ beschäftigt sich mit dem Studium der Theorie und Praxis von Rechenprozessen.",
-             slika: "",
-             odgovori: ["Computerwissenschaft", "Informationsübertragung", "Informatik", "Computersystem"],
-             tacni: [true, false, false, false],
-             grananje: [3, 2, 2, 2]
+             "redni": 1,
+             "tekst": "Vervollständigen Sie den Satz: ________________________ beschäftigt sich mit dem Studium der Theorie und Praxis von Rechenprozessen.",
+             "slika": "",
+             "odgovori": ["Computerwissenschaft", "Informationsübertragung", "Informatik", "Computersystem"],
+             "tacni": [true, false, false, false],
+             "grananje": [3, 2, 2, 2]
            },
            {
-             redni: 2,
-             tekst: "Vervollständigen Sie den Satz: ________________________ beschäftigt sich mit dem Studium von Computern und dem Rechnen sowie deren theoretischen und praktischen Anwendungen.",
-             slika: "",
-             odgovori: ["Informatik", "Informationsübertragung", "Computerwissenschaft", "Computersystem"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 3, -1]
+             "redni": 2,
+             "tekst": "Vervollständigen Sie den Satz: ________________________ beschäftigt sich mit dem Studium von Computern und dem Rechnen sowie deren theoretischen und praktischen Anwendungen.",
+             "slika": "",
+             "odgovori": ["Informatik", "Informationsübertragung", "Computerwissenschaft", "Computersystem"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 3, -1]
            }
-         ],  
-       }, //Ende deloviLekcije[1]
+         ]  
+       },
         
-       { //Start deloviLekcije[2]
-         nazivDelaLekcije: "Computer (Computersystem, PC)",
-         teorija: [
+       {
+         "nazivDelaLekcije": "Computer (Computersystem, PC)",
+         "teorija": [
            {
-             tekst: "Ein Computer (Computersystem, PC) ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen. Er verarbeitet und speichert Informationen.<br><br>Zu diesem Begriff gehören Desktop- und tragbare Computer (Notebook, Laptop), Smartphones, Tablets und eingebettete Computer in Autos, Flugzeugen, Kühlschränken usw.",
-             slika: "",   //"images/computers.png",
-             video: "videos/Embedded-Compurs.mp4",
+             "tekst": "Ein Computer (Computersystem, PC) ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen. Er verarbeitet und speichert Informationen.<br><br>Zu diesem Begriff gehören Desktop- und tragbare Computer (Notebook, Laptop), Smartphones, Tablets und eingebettete Computer in Autos, Flugzeugen, Kühlschränken usw.",
+             "slika": "",
+             "video": "videos/Embedded-Compurs.mp4"
            }
          ],  
          
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "Was ist ein Computer (Computersystem, PC)?",
-             slika: "images/computers_small.png",
-             odgovori: ["Es ist eine Menge von Komponenten.", "Es ist dasselbe wie Informatik.", "Ein Computer befasst sich mit dem Sammeln von Daten.", "Es ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 1, 2]
+             "redni": 0,
+             "tekst": "Was ist ein Computer (Computersystem, PC)?",
+             "slika": "images/computers_small.png",
+             "odgovori": ["Es ist eine Menge von Komponenten.", "Es ist dasselbe wie Informatik.", "Ein Computer befasst sich mit dem Sammeln von Daten.", "Es ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 1, 2]
            },
            {
-             redni: 1,
-             tekst: "Vervollständigen Sie den Satz: ________________________ ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen.",
-             slika: "images/computers_small.png",
-             odgovori: ["Informatik", "Computer", "Computerwissenschaft", "Information"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 2, -1, -1]
+             "redni": 1,
+             "tekst": "Vervollständigen Sie den Satz: ________________________ ist eine Maschine, die programmiert werden kann, um verschiedene Aufgaben zu erfüllen.",
+             "slika": "images/computers_small.png",
+             "odgovori": ["Informatik", "Computer", "Computerwissenschaft", "Information"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 2, -1, -1]
            },
            {
-             redni: 2,
-             tekst: "Was umfasst der Begriff Computer?",
-             slika: "",
-             odgovori: ["Zu diesem Begriff gehören Desktop- und tragbare Computer (Notebook, Laptop), Smartphones, Tablets, eingebettete Computer usw.", "Dieser Begriff umfasst nur Desktop-Computer.", "Dieser Begriff umfasst nur Laptops.", "Er umfasst nur Laptops und Tablets."],
-             tacni: [true, false, false, false],
-             grananje: [3, -1, -1, -1]
+             "redni": 2,
+             "tekst": "Was umfasst der Begriff Computer?",
+             "slika": "",
+             "odgovori": ["Zu diesem Begriff gehören Desktop- und tragbare Computer (Notebook, Laptop), Smartphones, Tablets, eingebettete Computer usw.", "Dieser Begriff umfasst nur Desktop-Computer.", "Dieser Begriff umfasst nur Laptops.", "Er umfasst nur Laptops und Tablets."],
+             "tacni": [true, false, false, false],
+             "grananje": [3, -1, -1, -1]
            }
-         ],  
-       } //Ende deloviLekcije[2]
+         ] 
+       }
        
-       //----------- HIER WEITER mit deloviLekcije[3] auf Deutsch, wie oben -----------
-      ],  //KRAJ za deloviLekcije: niz na de:
+      ]   
+      
+    },
     
-      //ENDE DER DEUTSCHEN VORLESUNG, das ist die ganze Theorie und Fragen Germ, und Klasse de: weiter unten
+
+    "it": 
+    {
+      "naslov": "Introduzione all'Informatica e alla Scienza dei Computer",
+      "naslovProzora": "Apprendimento Programmato",
       
-    },// --- Ende für Klasse de: - Lektionen, Fragen und Benutzeroberfläche auf Deutsch ---   
-    
-    //------Odavde pa na gore NEMAČKI
-    //------Odavde pa na dole je ITALIJANSKI
-      
-    	//----Da qui è ITALIANO --------------------------------------------------------------------------------------------------------------
-    //INIZIO IN ITALIANO, sotto va la classe it: includendo lezioni e domande
-    it: 
-    {   // --- class it - lezioni e domande in Italiano ---
-      naslov: "Introduzione all'Informatica e alla Scienza dei Computer",
-      naslovProzora: "Apprendimento Programmato",
-      
-      deloviLekcije:
+      "deloviLekcije":
       [
-       { //start deloviLekcije[0] 
-         nazivDelaLekcije: "Dati e Informazioni", 
-         teorija:     
+       {
+         "nazivDelaLekcije": "Dati e Informazioni", 
+         "teorija":     
          [
            {
-             tekst: "Un elemento di dati è un registro di un fatto, solitamente costituito da numeri, lettere o simboli.<br><br>Per esempio, il numero 4 è un elemento di dati. Un elemento di dati può essere interpretato in modi diversi. Il numero 4 può rappresentare il voto di uno studente, una distanza di 4 chilometri, ecc.",
-             slika: "images/podatak50.png",
-             video: "",
+             "tekst": "Un elemento di dati è un registro di un fatto, solitamente costituito da numeri, lettere o simboli.<br><br>Per esempio, il numero 4 è un elemento di dati. Un elemento di dati può essere interpretato in modi diversi. Il numero 4 può rappresentare il voto di uno studente, una distanza di 4 chilometri, ecc.",
+             "slika": "images/podatak50.png",
+             "video": ""
            },
            {
-             tekst: "Le informazioni sono un insieme di dati che sono stati interpretati in qualche modo.<br><br>Per esempio: \"Peter ha ottenuto un voto 5 in geografia.\" In questa frase, al numero 5 è stato dato significato — è stato interpretato — e questo lo rende informazione.<br>50 - dato. La massa del peso è 50 kg - informazione.",
-             slika: "images/informacija.png",
-             video: "",
+             "tekst": "Le informazioni sono un insieme di dati che sono stati interpretati in qualche modo.<br><br>Per esempio: \"Peter ha ottenuto un voto 5 in geografia.\" In questa frase, al numero 5 è stato dato significato — è stato interpretato — e questo lo rende informazione.<br>50 - dato. La massa del peso è 50 kg - informazione.",
+             "slika": "images/informacija.png",
+             "video": ""
            }
          ],  
          
-         pitanja: 
+         "pitanja": 
          [
            {
-             redni: 0,
-             tekst: "Cosa sono i dati?",
-             slika: "images/podatak50.png",
-             odgovori: [
+             "redni": 0,
+             "tekst": "Cosa sono i dati?",
+             "slika": "images/podatak50.png",
+             "odgovori": [
                "È quando sappiamo che una certa distanza è di 4 chilometri.", 
                "È, per esempio, quando sappiamo che Peter ha ottenuto un voto 5 in geografia.", 
                "È un insieme di dati che sono stati interpretati in qualche modo.", 
                "È un registro di un fatto, solitamente costituito da numeri, lettere o simboli."
              ],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 2, 3]
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 2, 3]
            },
            {
-             redni: 1,
-             tekst: "Scegli l'esempio di dati tra le opzioni sottostanti.",
-             slika: "",
-             odgovori: ["Il numero 3 è maggiore di 2.", "La somma di 3 e 2 è 5.", "Inform@t!k@12345", "La Francia è in Europa"],
-             tacni: [false, false, true, false],
-             grananje: [2, 2, 3, 2]
+             "redni": 1,
+             "tekst": "Scegli l'esempio di dati tra le opzioni sottostanti.",
+             "slika": "",
+             "odgovori": ["Il numero 3 è maggiore di 2.", "La somma di 3 e 2 è 5.", "Inform@t!k@12345", "La Francia è in Europa"],
+             "tacni": [false, false, true, false],
+             "grananje": [2, 2, 3, 2]
            },
            {
-             redni: 2,
-             tekst: "Scegli l'esempio di dati tra le opzioni sottostanti.",
-             slika: "",
-             odgovori: ["Peter ha ottenuto voto 5 in geografia.", "4", "L'educazione è utile.", "Sto rispondendo alle domande ora."],
-             tacni: [false, true, false, false],
-             grananje: [-1, 3, -1, -1]
+             "redni": 2,
+             "tekst": "Scegli l'esempio di dati tra le opzioni sottostanti.",
+             "slika": "",
+             "odgovori": ["Peter ha ottenuto voto 5 in geografia.", "4", "L'educazione è utile.", "Sto rispondendo alle domande ora."],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 3, -1, -1]
            },
            {
-             redni: 3,
-             tekst: "Scegli l'esempio di informazione tra le opzioni sottostanti.",
-             slika: "images/informacija_mala.png",
-             odgovori: ["4", "dati", "Il numero Pi, cioè &pi; in matematica, ha un valore approssimativo di 3,14", "Alimentazione elettrica"],
-             tacni: [false, false, true, false],
-             grananje: [4, 4, 6, 4]
+             "redni": 3,
+             "tekst": "Scegli l'esempio di informazione tra le opzioni sottostanti.",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["4", "dati", "Il numero Pi, cioè &pi; in matematica, ha un valore approssimativo di 3,14", "Alimentazione elettrica"],
+             "tacni": [false, false, true, false],
+             "grananje": [4, 4, 6, 4]
            },
            {
-             redni: 4,
-             tekst: "Cosa sono le informazioni?",
-             slika: "images/informacija_mala.png",
-             odgovori: ["È un insieme di dati che sono stati interpretati in qualche modo.", "5", "50", "È un registro di un fatto, solitamente costituito da numeri, lettere o simboli."],
-             tacni: [true, false, false, false],
-             grananje: [6, 5, 5, 5]
+             "redni": 4,
+             "tekst": "Cosa sono le informazioni?",
+             "slika": "images/informacija_mala.png",
+             "odgovori": ["È un insieme di dati che sono stati interpretati in qualche modo.", "5", "50", "È un registro di un fatto, solitamente costituito da numeri, lettere o simboli."],
+             "tacni": [true, false, false, false],
+             "grananje": [6, 5, 5, 5]
            },
            {
-             redni: 5,
-             tekst: "Scegli l'esempio di informazione tra le opzioni sottostanti.",
-             slika: "",
-             odgovori: ["5", "0.142857", "Milan ha ricevuto il voto 5 in inglese.", "2E+77232917-1"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 6, -1]
+             "redni": 5,
+             "tekst": "Scegli l'esempio di informazione tra le opzioni sottostanti.",
+             "slika": "",
+             "odgovori": ["5", "0.142857", "Milan ha ricevuto il voto 5 in inglese.", "2E+77232917-1"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 6, -1]
            }
          ]  
-       }, //end deloviLekcije[0]
+       },
        
-       { //start deloviLekcije[1]
-         nazivDelaLekcije: "Scienza dei Computer e Informatica",
-         teorija: 
+       {
+         "nazivDelaLekcije": "Scienza dei Computer e Informatica",
+         "teorija": 
          [
            {
-             tekst: "L'informatica è la scienza dell'informazione, la pratica dell'elaborazione delle informazioni e l'ingegneria dei sistemi informativi. L'informatica studia la struttura, gli algoritmi, il comportamento e le interazioni dei sistemi naturali e artificiali che memorizzano, elaborano, accedono e comunicano informazioni.",
-             slika: "images/informatika.png",
-             video: "",
+             "tekst": "L'informatica è la scienza dell'informazione, la pratica dell'elaborazione delle informazioni e l'ingegneria dei sistemi informativi. L'informatica studia la struttura, gli algoritmi, il comportamento e le interazioni dei sistemi naturali e artificiali che memorizzano, elaborano, accedono e comunicano informazioni.",
+             "slika": "images/informatika.png",
+             "video": ""
            },
            {
-             tekst: "La scienza dei computer riguarda lo studio della teoria e della pratica dei processi di calcolo.<br><br>La scienza dei computer è lo studio dei computer e dell'informatica, così come delle loro applicazioni teoriche e pratiche. (Britannica)",
-             slika: "images/racunarstvo.png",
-             video: "",
+             "tekst": "La scienza dei computer riguarda lo studio della teoria e della pratica dei processi di calcolo.<br><br>La scienza dei computer è lo studio dei computer e dell'informatica, così come delle loro applicazioni teoriche e pratiche. (Britannica)",
+             "slika": "images/racunarstvo.png",
+             "video": ""
            }
          ],  
          
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "Completa la frase: ________________________ è la scienza dell'informazione, la pratica dell'elaborazione delle informazioni e l'ingegneria dei sistemi informativi. L'informatica studia la struttura, gli algoritmi, il comportamento e le interazioni dei sistemi naturali e artificiali che memorizzano, elaborano, accedono e comunicano informazioni.",
-             slika: "",
-             odgovori: ["Scienza dei Computer", "Informatica", "Computer", "Informazione"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 1, -1, -1]
+             "redni": 0,
+             "tekst": "Completa la frase: ________________________ è la scienza dell'informazione, la pratica dell'elaborazione delle informazioni e l'ingegneria dei sistemi informativi. L'informatica studia la struttura, gli algoritmi, il comportamento e le interazioni dei sistemi naturali e artificiali che memorizzano, elaborano, accedono e comunicano informazioni.",
+             "slika": "",
+             "odgovori": ["Scienza dei Computer", "Informatica", "Computer", "Informazione"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 1, -1, -1]
            },
            {
-             redni: 1,
-             tekst: "Completa la frase: ________________________ riguarda lo studio della teoria e della pratica dei processi di calcolo.",
-             slika: "",
-             odgovori: ["Scienza dei Computer", "Trasmissione delle informazioni", "Informatica", "Sistema informatico"],
-             tacni: [true, false, false, false],
-             grananje: [3, 2, 2, 2]
+             "redni": 1,
+             "tekst": "Completa la frase: ________________________ riguarda lo studio della teoria e della pratica dei processi di calcolo.",
+             "slika": "",
+             "odgovori": ["Scienza dei Computer", "Trasmissione delle informazioni", "Informatica", "Sistema informatico"],
+             "tacni": [true, false, false, false],
+             "grananje": [3, 2, 2, 2]
            },
            {
-             redni: 2,
-             tekst: "Completa la frase: ________________________ riguarda lo studio dei computer e dell'informatica, così come delle loro applicazioni teoriche e pratiche.",
-             slika: "",
-             odgovori: ["Informatica", "Trasmissione delle informazioni", "Scienza dei Computer", "Sistema informatico"],
-             tacni: [false, false, true, false],
-             grananje: [-1, -1, 3, -1]
+             "redni": 2,
+             "tekst": "Completa la frase: ________________________ riguarda lo studio dei computer e dell'informatica, così come delle loro applicazioni teoriche e pratiche.",
+             "slika": "",
+             "odgovori": ["Informatica", "Trasmissione delle informazioni", "Scienza dei Computer", "Sistema informatico"],
+             "tacni": [false, false, true, false],
+             "grananje": [-1, -1, 3, -1]
            }
          ]  
-       }, //end deloviLekcije[1]
+       },
        
-       { //start deloviLekcije[2]
-         nazivDelaLekcije: "Computer (sistema informatico, PC)",
-         teorija: [
+       {
+         "nazivDelaLekcije": "Computer (sistema informatico, PC)",
+         "teorija": [
            {
-             tekst: "Un computer (sistema informatico, PC) è una macchina che può essere programmata per eseguire diversi tipi di compiti. Elabora e memorizza informazioni.<br><br>Questo concetto include computer desktop e portatili (notebook, laptop), smartphone, tablet e computer incorporati in auto, aeroplani, frigoriferi, ecc.",
-             slika: "",   //"images/computers.png",
-             video: "videos/Embedded-Compurs.mp4",
+             "tekst": "Un computer (sistema informatico, PC) è una macchina che può essere programmata per eseguire diversi tipi di compiti. Elabora e memorizza informazioni.<br><br>Questo concetto include computer desktop e portatili (notebook, laptop), smartphone, tablet e computer incorporati in auto, aeroplani, frigoriferi, ecc.",
+             "slika": "", 
+             "video": "videos/Embedded-Compurs.mp4"
            }
          ],  
          
-         pitanja: [
+         "pitanja": [
            {
-             redni: 0,
-             tekst: "Cos'è un computer (sistema informatico, PC)?",
-             slika: "images/computers_small.png",
-             odgovori: ["È un insieme di componenti.", "È lo stesso dell'informatica.", "Un computer si occupa della raccolta dei dati.", "È una macchina che può essere programmata per eseguire diversi tipi di compiti."],
-             tacni: [false, false, false, true],
-             grananje: [1, 1, 1, 2]
+             "redni": 0,
+             "tekst": "Cos'è un computer (sistema informatico, PC)?",
+             "slika": "images/computers_small.png",
+             "odgovori": ["È un insieme di componenti.", "È lo stesso dell'informatica.", "Un computer si occupa della raccolta dei dati.", "È una macchina che può essere programmata per eseguire diversi tipi di compiti."],
+             "tacni": [false, false, false, true],
+             "grananje": [1, 1, 1, 2]
            },
            {
-             redni: 1,
-             tekst: "Completa la frase: ________________________ è una macchina che può essere programmata per eseguire diversi tipi di compiti.",
-             slika: "images/computers_small.png",
-             odgovori: ["Informatica", "Computer", "Scienza dei Computer", "Informazione"],
-             tacni: [false, true, false, false],
-             grananje: [-1, 2, -1, -1]
+             "redni": 1,
+             "tekst": "Completa la frase: ________________________ è una macchina che può essere programmata per eseguire diversi tipi di compiti.",
+             "slika": "images/computers_small.png",
+             "odgovori": ["Informatica", "Computer", "Scienza dei Computer", "Informazione"],
+             "tacni": [false, true, false, false],
+             "grananje": [-1, 2, -1, -1]
            },
            {
-             redni: 2,
-             tekst: "Cosa include il termine computer?",
-             slika: "",
-             odgovori: ["Questo termine include computer desktop e portatili (notebook, laptop), smartphone, tablet, computer incorporati, ecc.", "Questo termine include solo computer desktop.", "Questo termine include solo computer portatili.", "Include solo laptop e tablet."],
-             tacni: [true, false, false, false],
-             grananje: [3, -1, -1, -1]
+             "redni": 2,
+             "tekst": "Cosa include il termine computer?",
+             "slika": "",
+             "odgovori": ["Questo termine include computer desktop e portatili (notebook, laptop), smartphone, tablet, computer incorporati, ecc.", "Questo termine include solo computer desktop.", "Questo termine include solo computer portatili.", "Include solo laptop e tablet."],
+             "tacni": [true, false, false, false],
+             "grananje": [3, -1, -1, -1]
            }
          ]  
-       } //end deloviLekcije[2]
-       
-       //----------- Da CONTINUARE con deloviLekcije[3] in Italiano, come sopra -----------
-      ],  
-           
-      //FINE DELLE LEZIONI IN ITALIANO, qui terminano teoria e domande, ma la classe it: continua sotto
-       
-    },   //per la classe IT: - lezioni, domande e interfaccia utente in it. ---
+       }       
+      ]       
+    },
 
-       //------Da qui fino a sopra ITALIANO, dovde je ITALIJANSKI
-       //------Odavde pa na dole je FRANCUSKI
 
-    fr: 
-    {   // --- class fr - lessons and questions in French ---
-      naslov: "Introduction à l'informatique et à la science de l'information",
-      naslovProzora: "Apprentissage Programmé",
+    "fr": 
+    {
+      "naslov": "Introduction à l'informatique et à la science de l'information",
+      "naslovProzora": "Apprentissage Programmé",
       
-      deloviLekcije:
+      "deloviLekcije":
       [
-        { //start deloviLekcije[0]
-          nazivDelaLekcije: "Données et Informations", 
-          teorija:         
+        {
+          "nazivDelaLekcije": "Données et Informations", 
+          "teorija":         
           [
             {
-              tekst: "Un élément de données est un enregistrement d'un fait, généralement composé de chiffres, lettres ou symboles.<br><br>Par exemple, le nombre 4 est un élément de données. Un élément de données peut être interprété de différentes manières. Le nombre 4 peut représenter la note d'un étudiant, une distance de 4 kilomètres, etc.",
-              slika: "images/podatak50.png",
-              video: "",
+              "tekst": "Un élément de données est un enregistrement d'un fait, généralement composé de chiffres, lettres ou symboles.<br><br>Par exemple, le nombre 4 est un élément de données. Un élément de données peut être interprété de différentes manières. Le nombre 4 peut représenter la note d'un étudiant, une distance de 4 kilomètres, etc.",
+              "slika": "images/podatak50.png",
+              "video": ""
             },
             {
-              tekst: "L'information est un ensemble de données qui a été interprété d'une certaine manière.<br><br>Par exemple : \"Peter a obtenu la note 5 en géographie.\" Dans cette phrase, le nombre 5 a une signification — il a été interprété — ce qui en fait de l'information.<br>50 - donnée. La masse du poids est de 50 kg - information.",
-              slika: "images/informacija.png",
-              video: "",
+              "tekst": "L'information est un ensemble de données qui a été interprété d'une certaine manière.<br><br>Par exemple : \"Peter a obtenu la note 5 en géographie.\" Dans cette phrase, le nombre 5 a une signification — il a été interprété — ce qui en fait de l'information.<br>50 - donnée. La masse du poids est de 50 kg - information.",
+              "slika": "images/informacija.png",
+              "video": ""
             }
           ],  
                 
-          pitanja: 
+          "pitanja": 
           [
             {
-              redni: 0,
-              tekst: "Qu'est-ce que les données ?",
-              slika: "images/podatak50.png",
-              odgovori: [
+              "redni": 0,
+              "tekst": "Qu'est-ce que les données ?",
+              "slika": "images/podatak50.png",
+              "odgovori": [
                 "C'est lorsque nous savons qu'une certaine distance est de 4 kilomètres.", 
                 "C'est, par exemple, lorsque nous savons que Peter a obtenu la note 5 en géographie.", 
                 "C'est un ensemble de données qui a été interprété d'une certaine manière.", 
                 "C'est un enregistrement d'un fait, généralement composé de chiffres, lettres ou symboles."
               ],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 2, 3]
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 2, 3]
             },
             {
-              redni: 1,
-              tekst: "Choisissez l'exemple de données parmi les options ci-dessous.",
-              slika: "",
-              odgovori: ["Le nombre 3 est plus grand que 2.", "La somme de 3 et 2 est égale à 5.", "Inform@t!k@12345", "La France est en Europe"],
-              tacni: [false, false, true, false],
-              grananje: [2, 2, 3, 2]
+              "redni": 1,
+              "tekst": "Choisissez l'exemple de données parmi les options ci-dessous.",
+              "slika": "",
+              "odgovori": ["Le nombre 3 est plus grand que 2.", "La somme de 3 et 2 est égale à 5.", "Inform@t!k@12345", "La France est en Europe"],
+              "tacni": [false, false, true, false],
+              "grananje": [2, 2, 3, 2]
             },
             {
-              redni: 2,
-              tekst: "Choisissez l'exemple de données parmi les options ci-dessous.",
-              slika: "",
-              odgovori: ["Peter a obtenu la note 5 en géographie.", "4", "L'éducation est utile.", "Je réponds maintenant aux questions."],
-              tacni: [false, true, false, false],
-              grananje: [-1, 3, -1, -1]
+              "redni": 2,
+              "tekst": "Choisissez l'exemple de données parmi les options ci-dessous.",
+              "slika": "",
+              "odgovori": ["Peter a obtenu la note 5 en géographie.", "4", "L'éducation est utile.", "Je réponds maintenant aux questions."],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 3, -1, -1]
             },
             {
-              redni: 3,
-              tekst: "Choisissez l'exemple d'information parmi les options ci-dessous.",
-              slika: "images/informacija_mala.png",
-              odgovori: ["4", "données", "Le nombre Pi, c'est-à-dire &pi; en mathématiques, a une valeur approximative de 3,14", "Alimentation électrique"],
-              tacni: [false, false, true, false],
-              grananje: [4, 4, 6, 4]
+              "redni": 3,
+              "tekst": "Choisissez l'exemple d'information parmi les options ci-dessous.",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["4", "données", "Le nombre Pi, c'est-à-dire &pi; en mathématiques, a une valeur approximative de 3,14", "Alimentation électrique"],
+              "tacni": [false, false, true, false],
+              "grananje": [4, 4, 6, 4]
             },
             {
-              redni: 4,
-              tekst: "Qu'est-ce que l'information ?",
-              slika: "images/informacija_mala.png",
-              odgovori: ["C'est un ensemble de données qui a été interprété d'une certaine manière.", "5", "50", "C'est un enregistrement d'un fait, généralement composé de chiffres, lettres ou symboles."],
-              tacni: [true, false, false, false],
-              grananje: [6, 5, 5, 5]
+              "redni": 4,
+              "tekst": "Qu'est-ce que l'information ?",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["C'est un ensemble de données qui a été interprété d'une certaine manière.", "5", "50", "C'est un enregistrement d'un fait, généralement composé de chiffres, lettres ou symboles."],
+              "tacni": [true, false, false, false],
+              "grananje": [6, 5, 5, 5]
             },
             {
-              redni: 5,
-              tekst: "Choisissez l'exemple d'information parmi les options ci-dessous.",
-              slika: "",
-              odgovori: ["5", "0,142857", "Milan a obtenu la note 5 en anglais.", "2E+77232917-1"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 6, -1]
+              "redni": 5,
+              "tekst": "Choisissez l'exemple d'information parmi les options ci-dessous.",
+              "slika": "",
+              "odgovori": ["5", "0,142857", "Milan a obtenu la note 5 en anglais.", "2E+77232917-1"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 6, -1]
             }
           ]  
-        }, //end deloviLekcije[0]
+        },
     
-        { //start deloviLekcije[1]
-          nazivDelaLekcije: "Informatique et Sciences de l'Information",
-          teorija: 
+        {
+          "nazivDelaLekcije": "Informatique et Sciences de l'Information",
+          "teorija": 
           [
             {
-              tekst: "L'informatique est la science de l'information, la pratique du traitement de l'information et l'ingénierie des systèmes d'information. L'informatique étudie la structure, les algorithmes, le comportement et les interactions des systèmes naturels et artificiels qui stockent, traitent, accèdent et communiquent l'information.",
-              slika: "images/informatika.png",
-              video: "",
+              "tekst": "L'informatique est la science de l'information, la pratique du traitement de l'information et l'ingénierie des systèmes d'information. L'informatique étudie la structure, les algorithmes, le comportement et les interactions des systèmes naturels et artificiels qui stockent, traitent, accèdent et communiquent l'information.",
+              "slika": "images/informatika.png",
+              "video": ""
             },
             {
-              tekst: "L'informatique se concentre sur l'étude de la théorie et de la pratique des processus de calcul.<br><br>L'informatique est l'étude des ordinateurs et du calcul ainsi que de leurs applications théoriques et pratiques. (Britannica)",
-              slika: "images/racunarstvo.png",
-              video: "",
+              "tekst": "L'informatique se concentre sur l'étude de la théorie et de la pratique des processus de calcul.<br><br>L'informatique est l'étude des ordinateurs et du calcul ainsi que de leurs applications théoriques et pratiques. (Britannica)",
+              "slika": "images/racunarstvo.png",
+              "video": ""
             }
           ],  
 
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Complétez la phrase : ________________________ est la science de l'information, la pratique du traitement de l'information et l'ingénierie des systèmes d'information. L'informatique étudie la structure, les algorithmes, le comportement et les interactions des systèmes naturels et artificiels qui stockent, traitent, accèdent et communiquent l'information.",
-              slika: "",
-              odgovori: ["Informatique", "Science de l'Information", "Ordinateur", "Information"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 1, -1, -1]
+              "redni": 0,
+              "tekst": "Complétez la phrase : ________________________ est la science de l'information, la pratique du traitement de l'information et l'ingénierie des systèmes d'information. L'informatique étudie la structure, les algorithmes, le comportement et les interactions des systèmes naturels et artificiels qui stockent, traitent, accèdent et communiquent l'information.",
+              "slika": "",
+              "odgovori": ["Informatique", "Science de l'Information", "Ordinateur", "Information"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 1, -1, -1]
             },
             {
-              redni: 1,
-              tekst: "Complétez la phrase : ________________________ se concentre sur l'étude de la théorie et de la pratique des processus de calcul.",
-              slika: "",
-              odgovori: ["Science de l'Information", "Transmission de l'information", "Informatique", "Système informatique"],
-              tacni: [true, false, false, false],
-              grananje: [3, 2, 2, 2]
+              "redni": 1,
+              "tekst": "Complétez la phrase : ________________________ se concentre sur l'étude de la théorie et de la pratique des processus de calcul.",
+              "slika": "",
+              "odgovori": ["Science de l'Information", "Transmission de l'information", "Informatique", "Système informatique"],
+              "tacni": [true, false, false, false],
+              "grananje": [3, 2, 2, 2]
             },
             {
-              redni: 2,
-              tekst: "Complétez la phrase : ________________________ étudie les ordinateurs et le calcul ainsi que leurs applications théoriques et pratiques.",
-              slika: "",
-              odgovori: ["Informatique", "Transmission de l'information", "Science de l'Information", "Système informatique"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 3, -1]
+              "redni": 2,
+              "tekst": "Complétez la phrase : ________________________ étudie les ordinateurs et le calcul ainsi que leurs applications théoriques et pratiques.",
+              "slika": "",
+              "odgovori": ["Informatique", "Transmission de l'information", "Science de l'Information", "Système informatique"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 3, -1]
             }
           ]  
-        }, //end deloviLekcije[1]
+        },
         
-        { //start deloviLekcije[2]
-          nazivDelaLekcije: "Ordinateur (système informatique, PC)",
-          teorija: [
+        {
+          "nazivDelaLekcije": "Ordinateur (système informatique, PC)",
+          "teorija": [
             {
-              tekst: "Un ordinateur (système informatique, PC) est une machine qui peut être programmée pour effectuer différents types de tâches. Il traite et stocke l'information.<br><br>Ce concept inclut les ordinateurs de bureau et portables (notebook, laptop), les smartphones, les tablettes et les ordinateurs embarqués dans les voitures, avions, réfrigérateurs, etc.",
-                 slika: "",   //"images/computers.png",
-                 video: "videos/Embedded-Compurs.mp4",
+              "tekst": "Un ordinateur (système informatique, PC) est une machine qui peut être programmée pour effectuer différents types de tâches. Il traite et stocke l'information.<br><br>Ce concept inclut les ordinateurs de bureau et portables (notebook, laptop), les smartphones, les tablettes et les ordinateurs embarqués dans les voitures, avions, réfrigérateurs, etc.",
+                 "slika": "",
+                 "video": "videos/Embedded-Compurs.mp4"
             }
           ],  
     
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Qu'est-ce qu'un ordinateur (système informatique, PC) ?",
-              slika: "images/computers_small.png",
-              odgovori: ["C'est un ensemble de composants.", "C'est la même chose que l'informatique.", "Un ordinateur collecte des données.", "C'est une machine qui peut être programmée pour effectuer différents types de tâches."],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 1, 2]
+              "redni": 0,
+              "tekst": "Qu'est-ce qu'un ordinateur (système informatique, PC) ?",
+              "slika": "images/computers_small.png",
+              "odgovori": ["C'est un ensemble de composants.", "C'est la même chose que l'informatique.", "Un ordinateur collecte des données.", "C'est une machine qui peut être programmée pour effectuer différents types de tâches."],
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 1, 2]
             },
             {
-              redni: 1,
-              tekst: "Complétez la phrase : ________________________ est une machine qui peut être programmée pour effectuer différents types de tâches.",
-              slika: "images/computers_small.png",
-              odgovori: ["Informatique", "Ordinateur", "Science de l'Information", "Information"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 2, -1, -1]
+              "redni": 1,
+              "tekst": "Complétez la phrase : ________________________ est une machine qui peut être programmée pour effectuer différents types de tâches.",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Informatique", "Ordinateur", "Science de l'Information", "Information"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 2, -1, -1]
             },
             {
-              redni: 2,
-              tekst: "Que comprend le terme ordinateur ?",
-              slika: "",
-              odgovori: ["Ce terme inclut les ordinateurs de bureau et portables (notebook, laptop), les smartphones, les tablettes et les ordinateurs embarqués, etc.", "Ce terme inclut uniquement les ordinateurs de bureau.", "Ce terme inclut uniquement les ordinateurs portables.", "Il inclut uniquement les laptops et tablettes."],
-              tacni: [true, false, false, false],
-              grananje: [3, -1, -1, -1]
+              "redni": 2,
+              "tekst": "Que comprend le terme ordinateur ?",
+              "slika": "",
+              "odgovori": ["Ce terme inclut les ordinateurs de bureau et portables (notebook, laptop), les smartphones, les tablettes et les ordinateurs embarqués, etc.", "Ce terme inclut uniquement les ordinateurs de bureau.", "Ce terme inclut uniquement les ordinateurs portables.", "Il inclut uniquement les laptops et tablettes."],
+              "tacni": [true, false, false, false],
+              "grananje": [3, -1, -1, -1]
             }
           ]  
-        } //end deloviLekcije[2]
-        
-        //----------- To be CONTINUED with deloviLekcije[3] if needed -----------    
-      ],
-      
-    }, //kraj za klasu za fr:
+        }        
+      ]      
+    },
 
-    //------dovde je FRANCUSKI
-    //------Odavde pa na dole je RUSKI
-
-    ru: 
-    {   // --- class ru - lessons and questions in Russian ---
-      naslov: "Введение в информатику и компьютерные науки",
-      naslovProzora: "Программируемое обучение",
+    "ru": 
+    { 
+      "naslov": "Введение в информатику и компьютерные науки",
+      "naslovProzora": "Программируемое обучение",
       
-      deloviLekcije:
+      "deloviLekcije":
       [
-        { //start deloviLekcije[0]
-          nazivDelaLekcije: "Данные и информация", 
-          teorija:     
+        {
+          "nazivDelaLekcije": "Данные и информация", 
+          "teorija":     
           [
             {
-              tekst: "Данный элемент — это запись факта, обычно состоящая из чисел, букв или символов.<br><br>Например, число 4 является элементом данных. Элемент данных может интерпретироваться по-разному. Число 4 может означать оценку студента, расстояние 4 километра и т.д.",
-              slika: "images/podatak50.png",
-              video: "",
+              "tekst": "Данный элемент — это запись факта, обычно состоящая из чисел, букв или символов.<br><br>Например, число 4 является элементом данных. Элемент данных может интерпретироваться по-разному. Число 4 может означать оценку студента, расстояние 4 километра и т.д.",
+              "slika": "images/podatak50.png",
+              "video": ""
             },
             {
-              tekst: "Информация — это набор данных, который был интерпретирован определённым образом.<br><br>Например: «Петер получил оценку 5 по географии». В этом предложении число 5 имеет смысл — оно интерпретировано — и это делает его информацией.<br>50 - данные. Масса груза составляет 50 кг - информация.",
-              slika: "images/informacija.png",
-              video: "",
+              "tekst": "Информация — это набор данных, который был интерпретирован определённым образом.<br><br>Например: «Петер получил оценку 5 по географии». В этом предложении число 5 имеет смысл — оно интерпретировано — и это делает его информацией.<br>50 - данные. Масса груза составляет 50 кг - информация.",
+              "slika": "images/informacija.png",
+              "video": ""
             }
           ],  
             
-          pitanja: 
+          "pitanja": 
           [
             {
-              redni: 0,
-              tekst: "Что такое данные?",
-              slika: "images/podatak50.png",
-              odgovori: [
+              "redni": 0,
+              "tekst": "Что такое данные?",
+              "slika": "images/podatak50.png",
+              "odgovori": [
                 "Это когда мы знаем, что определённое расстояние ровно 4 километра.", 
                 "Это, например, когда мы знаем, что Петер получил оценку 5 по географии.", 
                 "Это набор данных, который был интерпретирован определённым образом.", 
                 "Это запись факта, обычно состоящая из чисел, букв или символов."
               ],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 2, 3]
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 2, 3]
             },
             {
-              redni: 1,
-              tekst: "Выберите пример данных из предложенных вариантов.",
-              slika: "",
-              odgovori: ["Число 3 больше 2.", "Сумма 3 и 2 равна 5.", "Inform@t!k@12345", "Франция находится в Европе"],
-              tacni: [false, false, true, false],
-              grananje: [2, 2, 3, 2]
+              "redni": 1,
+              "tekst": "Выберите пример данных из предложенных вариантов.",
+              "slika": "",
+              "odgovori": ["Число 3 больше 2.", "Сумма 3 и 2 равна 5.", "Inform@t!k@12345", "Франция находится в Европе"],
+              "tacni": [false, false, true, false],
+              "grananje": [2, 2, 3, 2]
             },
             {
-              redni: 2,
-              tekst: "Выберите пример данных из предложенных вариантов.",
-              slika: "",
-              odgovori: ["Петер получил оценку 5 по географии.", "4", "Образование полезно.", "Сейчас я отвечаю на вопросы."],
-              tacni: [false, true, false, false],
-              grananje: [-1, 3, -1, -1]
+              "redni": 2,
+              "tekst": "Выберите пример данных из предложенных вариантов.",
+              "slika": "",
+              "odgovori": ["Петер получил оценку 5 по географии.", "4", "Образование полезно.", "Сейчас я отвечаю на вопросы."],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 3, -1, -1]
             },
             {
-              redni: 3,
-              tekst: "Выберите пример информации из предложенных вариантов.",
-              slika: "images/informacija_mala.png",
-              odgovori: ["4", "данные", "Число Пи, то есть &pi; в математике, примерно равно 3,14", "Электропитание"],
-              tacni: [false, false, true, false],
-              grananje: [4, 4, 6, 4]
+              "redni": 3,
+              "tekst": "Выберите пример информации из предложенных вариантов.",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["4", "данные", "Число Пи, то есть &pi; в математике, примерно равно 3,14", "Электропитание"],
+              "tacni": [false, false, true, false],
+              "grananje": [4, 4, 6, 4]
             },
             {
-              redni: 4,
-              tekst: "Что такое информация?",
-              slika: "images/informacija_mala.png",
-              odgovori: ["Это набор данных, который был интерпретирован определённым образом.", "5", "50", "Это запись факта, обычно состоящая из чисел, букв или символов."],
-              tacni: [true, false, false, false],
-              grananje: [6, 5, 5, 5]
+              "redni": 4,
+              "tekst": "Что такое информация?",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["Это набор данных, который был интерпретирован определённым образом.", "5", "50", "Это запись факта, обычно состоящая из чисел, букв или символов."],
+              "tacni": [true, false, false, false],
+              "grananje": [6, 5, 5, 5]
             },
             {
-              redni: 5,
-              tekst: "Выберите пример информации из предложенных вариантов.",
-              slika: "",
-              odgovori: ["5", "0,142857", "Милан получил оценку 5 по английскому.", "2E+77232917-1"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 6, -1]
+              "redni": 5,
+              "tekst": "Выберите пример информации из предложенных вариантов.",
+              "slika": "",
+              "odgovori": ["5", "0,142857", "Милан получил оценку 5 по английскому.", "2E+77232917-1"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 6, -1]
             }
           ]  
-        }, //end deloviLekcije[0]
+        },
               
-        { //start deloviLekcije[1]
-          nazivDelaLekcije: "Информатика и компьютерные науки",
-          teorija: 
+        {
+          "nazivDelaLekcije": "Информатика и компьютерные науки",
+          "teorija": 
           [
             {
-              tekst: "Информатика — это наука об информации, практика обработки информации и проектирование информационных систем. Информа́тика (фр. informatique; англ. computer science) — наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений",
-              slika: "images/informatika.png",
-              video: "",
+              "tekst": "Информатика — это наука об информации, практика обработки информации и проектирование информационных систем. Информа́тика (фр. informatique; англ. computer science) — наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений",
+              "slika": "images/informatika.png",
+              "video": ""
             },
             {
-              tekst: "Компьютерные науки занимаются изучением теории и практики вычислительных процессов.<br><br>Компьютерные науки изучают компьютеры и вычисления, а также их теоретические и практические применения. (Britannica)",
-              slika: "images/racunarstvo.png",
-              video: "",
+              "tekst": "Компьютерные науки занимаются изучением теории и практики вычислительных процессов.<br><br>Компьютерные науки изучают компьютеры и вычисления, а также их теоретические и практические применения. (Britannica)",
+              "slika": "images/racunarstvo.png",
+              "video": ""
             }
           ],  
             
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Завершите предложение: ________________________ — это наука об информации, практика обработки информации и проектирование информационных систем. Информа́тика (фр. informatique; англ. computer science) — наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений",
-              slika: "",
-              odgovori: ["Компьютерные науки", "Информатика", "Компьютер", "Информация"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 1, -1, -1]
+              "redni": 0,
+              "tekst": "Завершите предложение: ________________________ — это наука об информации, практика обработки информации и проектирование информационных систем. Информа́тика (фр. informatique; англ. computer science) — наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений",
+              "slika": "",
+              "odgovori": ["Компьютерные науки", "Информатика", "Компьютер", "Информация"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 1, -1, -1]
             },
             {
-              redni: 1,
-              tekst: "Завершите предложение: ________________________ изучает теорию и практику вычислительных процессов.",
-              slika: "",
-              odgovori: ["Компьютерные науки", "Передача информации", "Информатика", "Компьютерная система"],
-              tacni: [true, false, false, false],
-              grananje: [3, 2, 2, 2]
+              "redni": 1,
+              "tekst": "Завершите предложение: ________________________ изучает теорию и практику вычислительных процессов.",
+              "slika": "",
+              "odgovori": ["Компьютерные науки", "Передача информации", "Информатика", "Компьютерная система"],
+              "tacni": [true, false, false, false],
+              "grananje": [3, 2, 2, 2]
             },
             {
-              redni: 2,
-              tekst: "Завершите предложение: ________________________ изучает компьютеры и вычисления, а также их теоретические и практические применения.",
-              slika: "",
-              odgovori: ["Информатика", "Передача информации", "Компьютерные науки", "Компьютерная система"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 3, -1]
+              "redni": 2,
+              "tekst": "Завершите предложение: ________________________ изучает компьютеры и вычисления, а также их теоретические и практические применения.",
+              "slika": "",
+              "odgovori": ["Информатика", "Передача информации", "Компьютерные науки", "Компьютерная система"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 3, -1]
             }
           ]  
-        }, //end deloviLekcije[1]
+        },
     
-        { //start deloviLekcije[2]
-          nazivDelaLekcije: "Компьютер (система, ПК)",
-          teorija: [
+        {
+          "nazivDelaLekcije": "Компьютер (система, ПК)",
+          "teorija": [
             {
-              tekst: "Компьютер (система, ПК) — это машина, которую можно программировать для выполнения различных задач. Он обрабатывает и хранит информацию.<br><br>Этот концепт включает настольные и портативные компьютеры (ноутбуки, лэптопы), смартфоны, планшеты и встроенные компьютеры в автомобилях, самолетах, холодильниках и т.д.",
-              slika: "",   //"images/computers.png",
-              video: "videos/Embedded-Compurs.mp4",
+              "tekst": "Компьютер (система, ПК) — это машина, которую можно программировать для выполнения различных задач. Он обрабатывает и хранит информацию.<br><br>Этот концепт включает настольные и портативные компьютеры (ноутбуки, лэптопы), смартфоны, планшеты и встроенные компьютеры в автомобилях, самолетах, холодильниках и т.д.",
+              "slika": "",
+              "video": "videos/Embedded-Compurs.mp4"
             }
           ],  
             
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Что такое компьютер (система, ПК)?",
-              slika: "images/computers_small.png",
-              odgovori: ["Это набор компонентов.", "Это то же, что и информатика.", "Компьютер собирает данные.", "Это машина, которую можно программировать для выполнения различных задач."],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 1, 2]
+              "redni": 0,
+              "tekst": "Что такое компьютер (система, ПК)?",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Это набор компонентов.", "Это то же, что и информатика.", "Компьютер собирает данные.", "Это машина, которую можно программировать для выполнения различных задач."],
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 1, 2]
             },
             {
-              redni: 1,
-              tekst: "Завершите предложение: ________________________ — это машина, которую можно программировать для выполнения различных задач.",
-              slika: "images/computers_small.png",
-              odgovori: ["Информатика", "Компьютер", "Компьютерные науки", "Информация"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 2, -1, -1]
+              "redni": 1,
+              "tekst": "Завершите предложение: ________________________ — это машина, которую можно программировать для выполнения различных задач.",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Информатика", "Компьютер", "Компьютерные науки", "Информация"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 2, -1, -1]
             },
             {
-              redni: 2,
-              tekst: "Что включает термин компьютер?",
-              slika: "",
-              odgovori: ["Этот термин включает настольные и портативные компьютеры (ноутбуки, лэптопы), смартфоны, планшеты, встроенные компьютеры и т.д.", "Только настольные компьютеры.", "Только ноутбуки.", "Только лэптопы и планшеты."],
-              tacni: [true, false, false, false],
-              grananje: [3, -1, -1, -1]
+              "redni": 2,
+              "tekst": "Что включает термин компьютер?",
+              "slika": "",
+              "odgovori": ["Этот термин включает настольные и портативные компьютеры (ноутбуки, лэптопы), смартфоны, планшеты, встроенные компьютеры и т.д.", "Только настольные компьютеры.", "Только ноутбуки.", "Только лэптопы и планшеты."],
+              "tacni": [true, false, false, false],
+              "grananje": [3, -1, -1, -1]
             }
           ]  
-        } //end deloviLekcije[2]
-      ],
-          
-    }, //KRAJ KLASE ru:
+        } 
+      ]          
+    },
         
             
-       //------dovde je RUSKI
-       //------Odavde pa na dole je ŠPANSKI
-
-    es: 
-    {   // --- class es - lessons and questions in Spanish ---
-      naslov: "Introducción a la Informática y Ciencias de la Computación",
-      naslovProzora: "Aprendizaje Programado",
+    "es": 
+    { 
+      "naslov": "Introducción a la Informática y Ciencias de la Computación",
+      "naslovProzora": "Aprendizaje Programado",
           
-      deloviLekcije:
+      "deloviLekcije":
       [
-        { //start deloviLekcije[0]
-          nazivDelaLekcije: "Datos e Información", 
-          teorija:     
+        {
+          "nazivDelaLekcije": "Datos e Información", 
+          "teorija":     
           [
             {
-              tekst: "Un dato es un registro de un hecho, que generalmente consiste en números, letras o símbolos.<br><br>Por ejemplo, el número 4 es un dato. Un dato puede interpretarse de diferentes maneras. El número 4 puede representar la calificación de un estudiante, una distancia de 4 kilómetros, etc.",
-              slika: "images/podatak50.png",
-              video: "",
+              "tekst": "Un dato es un registro de un hecho, que generalmente consiste en números, letras o símbolos.<br><br>Por ejemplo, el número 4 es un dato. Un dato puede interpretarse de diferentes maneras. El número 4 puede representar la calificación de un estudiante, una distancia de 4 kilómetros, etc.",
+              "slika": "images/podatak50.png",
+              "video": ""
             },
             {
-              tekst: "La información es un conjunto de datos que han sido interpretados de alguna manera.<br><br>Por ejemplo: \"Pedro obtuvo una calificación 5 en geografía.\" En esta oración, el número 5 tiene significado — ha sido interpretado — y eso lo convierte en información.<br>50 - dato. La masa del peso es de 50 kg - información.",
-              slika: "images/informacija.png",
-              video: "",
+              "tekst": "La información es un conjunto de datos que han sido interpretados de alguna manera.<br><br>Por ejemplo: \"Pedro obtuvo una calificación 5 en geografía.\" En esta oración, el número 5 tiene significado — ha sido interpretado — y eso lo convierte en información.<br>50 - dato. La masa del peso es de 50 kg - información.",
+              "slika": "images/informacija.png",
+              "video": ""
             }
           ],  
             
-          pitanja: 
+          "pitanja": 
           [
             {
-              redni: 0,
-              tekst: "¿Qué son los datos?",
-              slika: "images/podatak50.png",
-              odgovori: [
+              "redni": 0,
+              "tekst": "¿Qué son los datos?",
+              "slika": "images/podatak50.png",
+              "odgovori": [
                 "Es cuando sabemos que cierta distancia es de 4 kilómetros.", 
                 "Es, por ejemplo, cuando sabemos que Pedro obtuvo una calificación 5 en geografía.", 
                 "Es un conjunto de datos que ha sido interpretado de alguna manera.", 
                 "Es un registro de un hecho, que generalmente consiste en números, letras o símbolos."
               ],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 2, 3]
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 2, 3]
             },
             {
-              redni: 1,
-              tekst: "Elige el ejemplo de dato entre las opciones siguientes.",
-              slika: "",
-              odgovori: ["El número 3 es mayor que 2.", "La suma de 3 y 2 es igual a 5.", "Inform@t!k@12345", "Francia está en Europa"],
-              tacni: [false, false, true, false],
-              grananje: [2, 2, 3, 2]
+              "redni": 1,
+              "tekst": "Elige el ejemplo de dato entre las opciones siguientes.",
+              "slika": "",
+              "odgovori": ["El número 3 es mayor que 2.", "La suma de 3 y 2 es igual a 5.", "Inform@t!k@12345", "Francia está en Europa"],
+              "tacni": [false, false, true, false],
+              "grananje": [2, 2, 3, 2]
             },
             {
-              redni: 2,
-              tekst: "Elige el ejemplo de dato entre las opciones siguientes.",
-              slika: "",
-              odgovori: ["Pedro obtuvo calificación 5 en geografía.", "4", "La educación es útil.", "Ahora estoy respondiendo preguntas."],
-              tacni: [false, true, false, false],
-              grananje: [-1, 3, -1, -1]
+              "redni": 2,
+              "tekst": "Elige el ejemplo de dato entre las opciones siguientes.",
+              "slika": "",
+              "odgovori": ["Pedro obtuvo calificación 5 en geografía.", "4", "La educación es útil.", "Ahora estoy respondiendo preguntas."],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 3, -1, -1]
             },
             {
-              redni: 3,
-              tekst: "Elige el ejemplo de información entre las opciones siguientes.",
-              slika: "images/informacija_mala.png",
-              odgovori: ["4", "dato", "El número Pi, es decir &pi; en matemáticas, tiene un valor aproximado de 3,14", "Suministro eléctrico"],
-              tacni: [false, false, true, false],
-              grananje: [4, 4, 6, 4]
+              "redni": 3,
+              "tekst": "Elige el ejemplo de información entre las opciones siguientes.",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["4", "dato", "El número Pi, es decir &pi; en matemáticas, tiene un valor aproximado de 3,14", "Suministro eléctrico"],
+              "tacni": [false, false, true, false],
+              "grananje": [4, 4, 6, 4]
             },
             {
-              redni: 4,
-              tekst: "¿Qué es la información?",
-              slika: "images/informacija_mala.png",
-              odgovori: ["Es un conjunto de datos que ha sido interpretado de alguna manera.", "5", "50", "Es un registro de un hecho, que generalmente consiste en números, letras o símbolos."],
-              tacni: [true, false, false, false],
-              grananje: [6, 5, 5, 5]
+              "redni": 4,
+              "tekst": "¿Qué es la información?",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["Es un conjunto de datos que ha sido interpretado de alguna manera.", "5", "50", "Es un registro de un hecho, que generalmente consiste en números, letras o símbolos."],
+              "tacni": [true, false, false, false],
+              "grananje": [6, 5, 5, 5]
             },
             {
-              redni: 5,
-              tekst: "Elige el ejemplo de información entre las opciones siguientes.",
-              slika: "",
-              odgovori: ["5", "0.142857", "Milan obtuvo calificación 5 en inglés.", "2E+77232917-1"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 6, -1]
+              "redni": 5,
+              "tekst": "Elige el ejemplo de información entre las opciones siguientes.",
+              "slika": "",
+              "odgovori": ["5", "0.142857", "Milan obtuvo calificación 5 en inglés.", "2E+77232917-1"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 6, -1]
             }
           ]  
-        }, //end deloviLekcije[0]
+        },
     
-        { //start deloviLekcije[1]
-          nazivDelaLekcije: "Informática y Ciencias de la Computación",
-          teorija: 
+        {
+          "nazivDelaLekcije": "Informática y Ciencias de la Computación",
+          "teorija": 
           [
             {
-              tekst: "La informática es la ciencia de la información, la práctica del procesamiento de información y la ingeniería de sistemas de información. La informática estudia la estructura, algoritmos, comportamiento e interacciones de sistemas naturales y artificiales que almacenan, procesan, acceden y comunican información.",
-              slika: "images/informatika.png",
-              video: "",
+              "tekst": "La informática es la ciencia de la información, la práctica del procesamiento de información y la ingeniería de sistemas de información. La informática estudia la estructura, algoritmos, comportamiento e interacciones de sistemas naturales y artificiales que almacenan, procesan, acceden y comunican información.",
+              "slika": "images/informatika.png",
+              "video": ""
             },
             {
-              tekst: "La ciencia de la computación se ocupa del estudio de la teoría y práctica de los procesos de cálculo.<br><br>La ciencia de la computación estudia los ordenadores y el cálculo, así como sus aplicaciones teóricas y prácticas. (Britannica)",
-              slika: "images/racunarstvo.png",
-              video: "",
+              "tekst": "La ciencia de la computación se ocupa del estudio de la teoría y práctica de los procesos de cálculo.<br><br>La ciencia de la computación estudia los ordenadores y el cálculo, así como sus aplicaciones teóricas y prácticas. (Britannica)",
+              "slika": "images/racunarstvo.png",
+              "video": ""
             }
           ],  
                 
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Completa la oración: ________________________ es la ciencia de la información, la práctica del procesamiento de información y la ingeniería de sistemas de información. La informática estudia la estructura, algoritmos, comportamiento e interacciones de sistemas naturales y artificiales que almacenan, procesan, acceden y comunican información.",
-              slika: "",
-              odgovori: ["Ciencias de la Computación", "Informática", "Computadora", "Información"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 1, -1, -1]
+              "redni": 0,
+              "tekst": "Completa la oración: ________________________ es la ciencia de la información, la práctica del procesamiento de información y la ingeniería de sistemas de información. La informática estudia la estructura, algoritmos, comportamiento e interacciones de sistemas naturales y artificiales que almacenan, procesan, acceden y comunican información.",
+              "slika": "",
+              "odgovori": ["Ciencias de la Computación", "Informática", "Computadora", "Información"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 1, -1, -1]
             },
             {
-              redni: 1,
-              tekst: "Completa la oración: ________________________ se ocupa del estudio de la teoría y práctica de los procesos de cálculo.",
-              slika: "",
-              odgovori: ["Ciencias de la Computación", "Transmisión de información", "Informática", "Sistema de computadora"],
-              tacni: [true, false, false, false],
-              grananje: [3, 2, 2, 2]
+              "redni": 1,
+              "tekst": "Completa la oración: ________________________ se ocupa del estudio de la teoría y práctica de los procesos de cálculo.",
+              "slika": "",
+              "odgovori": ["Ciencias de la Computación", "Transmisión de información", "Informática", "Sistema de computadora"],
+              "tacni": [true, false, false, false],
+              "grananje": [3, 2, 2, 2]
             },
             {
-              redni: 2,
-              tekst: "Completa la oración: ________________________ se ocupa del estudio de los ordenadores y del cálculo, así como de sus aplicaciones teóricas y prácticas.",
-              slika: "",
-              odgovori: ["Informática", "Transmisión de información", "Ciencias de la Computación", "Sistema de computadora"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 3, -1]
+              "redni": 2,
+              "tekst": "Completa la oración: ________________________ se ocupa del estudio de los ordenadores y del cálculo, así como de sus aplicaciones teóricas y prácticas.",
+              "slika": "",
+              "odgovori": ["Informática", "Transmisión de información", "Ciencias de la Computación", "Sistema de computadora"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 3, -1]
             }
           ]  
-        }, //end deloviLekcije[1]
+        },
             
-        { //start deloviLekcije[2]
-          nazivDelaLekcije: "Computadora (sistema, PC)",
-          teorija: [
+        {
+          "nazivDelaLekcije": "Computadora (sistema, PC)",
+          "teorija": [
             {
-              tekst: "Una computadora (sistema, PC) es una máquina que puede ser programada para realizar diferentes tipos de tareas. Procesa y almacena información.<br><br>Este concepto incluye computadoras de escritorio y portátiles (notebooks, laptops), smartphones, tablets y computadoras integradas en autos, aviones, refrigeradores, etc.",
-              slika: "",   //"images/computers.png",
-              video: "videos/Embedded-Compurs.mp4",
+              "tekst": "Una computadora (sistema, PC) es una máquina que puede ser programada para realizar diferentes tipos de tareas. Procesa y almacena información.<br><br>Este concepto incluye computadoras de escritorio y portátiles (notebooks, laptops), smartphones, tablets y computadoras integradas en autos, aviones, refrigeradores, etc.",
+              "slika": "",
+              "video": "videos/Embedded-Compurs.mp4"
             }
           ],  
             
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "¿Qué es una computadora (sistema, PC)?",
-              slika: "images/computers_small.png",
-              odgovori: ["Es un conjunto de componentes.", "Es lo mismo que informática.", "Una computadora se ocupa de recopilar datos.", "Es una máquina que puede ser programada para realizar diferentes tipos de tareas."],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 1, 2]
+              "redni": 0,
+              "tekst": "¿Qué es una computadora (sistema, PC)?",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Es un conjunto de componentes.", "Es lo mismo que informática.", "Una computadora se ocupa de recopilar datos.", "Es una máquina que puede ser programada para realizar diferentes tipos de tareas."],
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 1, 2]
             },
             {
-              redni: 1,
-              tekst: "Completa la oración: ________________________ es una máquina que puede ser programada para realizar diferentes tipos de tareas.",
-              slika: "images/computers_small.png",
-              odgovori: ["Informática", "Computadora", "Ciencias de la Computación", "Información"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 2, -1, -1]
+              "redni": 1,
+              "tekst": "Completa la oración: ________________________ es una máquina que puede ser programada para realizar diferentes tipos de tareas.",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Informática", "Computadora", "Ciencias de la Computación", "Información"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 2, -1, -1]
             },
             {
-              redni: 2,
-              tekst: "¿Qué incluye el término computadora?",
-              slika: "",
-              odgovori: ["Este término incluye computadoras de escritorio y portátiles (notebooks, laptops), smartphones, tablets y computadoras integradas, etc.", "Incluye solo computadoras de escritorio.", "Incluye solo laptops.", "Incluye solo laptops y tablets."],
-              tacni: [true, false, false, false],
-              grananje: [3, -1, -1, -1]
+              "redni": 2,
+              "tekst": "¿Qué incluye el término computadora?",
+              "slika": "",
+              "odgovori": ["Este término incluye computadoras de escritorio y portátiles (notebooks, laptops), smartphones, tablets y computadoras integradas, etc.", "Incluye solo computadoras de escritorio.", "Incluye solo laptops.", "Incluye solo laptops y tablets."],
+              "tacni": [true, false, false, false],
+              "grananje": [3, -1, -1, -1]
             }
           ]  
-        } //end deloviLekcije[2]
-      ],
-              
-    }, //es
+        }
+      ]              
+    },
 
-    //------dovde je ŠPANSKI
-    //------Odavde pa na dole je SLOVENAČKI
 
-    sl: 
-    {   // --- class sl - lessons and questions in Slovenian ---
-      naslov: "Uvod v Računalništvo in Informatiko",
-      naslovProzora: "Programirano Učenje",
+    "sl": 
+    { 
+      "naslov": "Uvod v Računalništvo in Informatiko",
+      "naslovProzora": "Programirano Učenje",
   
-      deloviLekcije:
+      "deloviLekcije":
       [
-        { //start deloviLekcije[0]
-          nazivDelaLekcije: "Podatki in Informacije", 
-          teorija:     
+        {
+          "nazivDelaLekcije": "Podatki in Informacije", 
+          "teorija":     
           [
             {
-              tekst: "Podatek je zapis dejstva, ki običajno vsebuje številke, črke ali simbole.<br><br>Na primer, številka 4 je podatek. Podatek je mogoče interpretirati na različne načine. Številka 4 lahko predstavlja oceno študenta, razdaljo 4 kilometre itd.",
-              slika: "images/podatak50.png",
-              video: "",
+              "tekst": "Podatek je zapis dejstva, ki običajno vsebuje številke, črke ali simbole.<br><br>Na primer, številka 4 je podatek. Podatek je mogoče interpretirati na različne načine. Številka 4 lahko predstavlja oceno študenta, razdaljo 4 kilometre itd.",
+              "slika": "images/podatak50.png",
+              "video": ""
             },
             {
-              tekst: "Informacija je sklop podatkov, ki so bili na nek način interpretirani.<br><br>Na primer: \"Peter je dobil oceno 5 iz geografije.\" V tem stavku je številki 5 dodeljen pomen — bila je interpretirana — kar jo naredi informacijo.<br>50 - podatek. Masa uteži je 50 kg - informacija.",
-              slika: "images/informacija.png",
-              video: "",
+              "tekst": "Informacija je sklop podatkov, ki so bili na nek način interpretirani.<br><br>Na primer: \"Peter je dobil oceno 5 iz geografije.\" V tem stavku je številki 5 dodeljen pomen — bila je interpretirana — kar jo naredi informacijo.<br>50 - podatek. Masa uteži je 50 kg - informacija.",
+              "slika": "images/informacija.png",
+              "video": ""
             }
           ],  
             
-          pitanja: 
+          "pitanja": 
           [
             {
-              redni: 0,
-              tekst: "Kaj so podatki?",
-              slika: "images/podatak50.png",
-              odgovori: [
+              "redni": 0,
+              "tekst": "Kaj so podatki?",
+              "slika": "images/podatak50.png",
+              "odgovori": [
                 "To je, ko vemo, da je neka razdalja 4 kilometre.", 
                 "To je, na primer, ko vemo, da je Peter dobil oceno 5 iz geografije.", 
                 "To je sklop podatkov, ki so bili na nek način interpretirani.", 
                 "To je zapis dejstva, ki običajno vsebuje številke, črke ali simbole."
               ],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 2, 3]
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 2, 3]
             },
             {
-              redni: 1,
-              tekst: "Izberi primer podatka med spodnjimi možnostmi.",
-              slika: "",
-              odgovori: ["Številka 3 je večja od 2.", "Vsota 3 in 2 je enaka 5.", "Inform@t!k@12345", "Francija je v Evropi"],
-              tacni: [false, false, true, false],
-              grananje: [2, 2, 3, 2]
+              "redni": 1,
+              "tekst": "Izberi primer podatka med spodnjimi možnostmi.",
+              "slika": "",
+              "odgovori": ["Številka 3 je večja od 2.", "Vsota 3 in 2 je enaka 5.", "Inform@t!k@12345", "Francija je v Evropi"],
+              "tacni": [false, false, true, false],
+              "grananje": [2, 2, 3, 2]
             },
             {
-              redni: 2,
-              tekst: "Izberi primer podatka med spodnjimi možnostmi.",
-              slika: "",
-              odgovori: ["Peter je dobil oceno 5 iz geografije.", "4", "Izobraževanje je koristno.", "Zdaj odgovarjam na vprašanja."],
-              tacni: [false, true, false, false],
-              grananje: [-1, 3, -1, -1]
+              "redni": 2,
+              "tekst": "Izberi primer podatka med spodnjimi možnostmi.",
+              "slika": "",
+              "odgovori": ["Peter je dobil oceno 5 iz geografije.", "4", "Izobraževanje je koristno.", "Zdaj odgovarjam na vprašanja."],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 3, -1, -1]
             },
             {
-              redni: 3,
-              tekst: "Izberi primer informacije med spodnjimi možnostmi.",
-              slika: "images/informacija_mala.png",
-              odgovori: ["4", "podatki", "Število Pi, tj. &pi; v matematiki, ima približno vrednost 3,14", "Napajanje"],
-              tacni: [false, false, true, false],
-              grananje: [4, 4, 6, 4]
+              "redni": 3,
+              "tekst": "Izberi primer informacije med spodnjimi možnostmi.",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["4", "podatki", "Število Pi, tj. &pi; v matematiki, ima približno vrednost 3,14", "Napajanje"],
+              "tacni": [false, false, true, false],
+              "grananje": [4, 4, 6, 4]
             },
             {
-              redni: 4,
-              tekst: "Kaj je informacija?",
-              slika: "images/informacija_mala.png",
-              odgovori: ["To je sklop podatkov, ki so bili na nek način interpretirani.", "5", "50", "To je zapis dejstva, ki običajno vsebuje številke, črke ali simbole."],
-              tacni: [true, false, false, false],
-              grananje: [6, 5, 5, 5]
+              "redni": 4,
+              "tekst": "Kaj je informacija?",
+              "slika": "images/informacija_mala.png",
+              "odgovori": ["To je sklop podatkov, ki so bili na nek način interpretirani.", "5", "50", "To je zapis dejstva, ki običajno vsebuje številke, črke ali simbole."],
+              "tacni": [true, false, false, false],
+              "grananje": [6, 5, 5, 5]
             },
             {
-              redni: 5,
-              tekst: "Izberi primer informacije med spodnjimi možnostmi.",
-              slika: "",
-              odgovori: ["5", "0.142857", "Milan je dobil oceno 5 iz angleščine.", "2E+77232917-1"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 6, -1]
+              "redni": 5,
+              "tekst": "Izberi primer informacije med spodnjimi možnostmi.",
+              "slika": "",
+              "odgovori": ["5", "0.142857", "Milan je dobil oceno 5 iz angleščine.", "2E+77232917-1"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 6, -1]
             }
           ]  
-        }, //end deloviLekcije[0]
+        },
                 
-        { //start deloviLekcije[1]
-          nazivDelaLekcije: "Računalništvo in Informatika",
-          teorija: 
+        {
+          "nazivDelaLekcije": "Računalništvo in Informatika",
+          "teorija": 
           [
             {
-              tekst: "Informatika je znanost o informacijah, praksa obdelave informacij in inženirstvo informacijskih sistemov. Informatika preučuje strukturo, algoritme, vedenje in interakcije naravnih in umetnih sistemov, ki shranjujejo, obdelujejo, dostopajo in komunicirajo informacije.",
-              slika: "images/informatika.png",
-              video: "",
+              "tekst": "Informatika je znanost o informacijah, praksa obdelave informacij in inženirstvo informacijskih sistemov. Informatika preučuje strukturo, algoritme, vedenje in interakcije naravnih in umetnih sistemov, ki shranjujejo, obdelujejo, dostopajo in komunicirajo informacije.",
+              "slika": "images/informatika.png",
+              "video": ""
             },
             {
-              tekst: "Računalništvo se ukvarja s preučevanjem teorije in prakse računalniških procesov.<br><br>Računalništvo je preučevanje računalnikov in računalništva ter njihovih teoretičnih in praktičnih aplikacij. (Britannica)",
-              slika: "images/racunarstvo.png",
-              video: "",
+              "tekst": "Računalništvo se ukvarja s preučevanjem teorije in prakse računalniških procesov.<br><br>Računalništvo je preučevanje računalnikov in računalništva ter njihovih teoretičnih in praktičnih aplikacij. (Britannica)",
+              "slika": "images/racunarstvo.png",
+              "video": ""
             }
           ],  
 
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Dopolni stavek: ________________________ je znanost o informacijah, praksa obdelave informacij in inženirstvo informacijskih sistemov. Informatika preučuje strukturo, algoritme, vedenje in interakcije naravnih in umetnih sistemov, ki shranjujejo, obdelujejo, dostopajo in komunicirajo informacije.",
-              slika: "",
-              odgovori: ["Računalništvo", "Informatika", "Računalnik", "Informacija"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 1, -1, -1]
+              "redni": 0,
+              "tekst": "Dopolni stavek: ________________________ je znanost o informacijah, praksa obdelave informacij in inženirstvo informacijskih sistemov. Informatika preučuje strukturo, algoritme, vedenje in interakcije naravnih in umetnih sistemov, ki shranjujejo, obdelujejo, dostopajo in komunicirajo informacije.",
+              "slika": "",
+              "odgovori": ["Računalništvo", "Informatika", "Računalnik", "Informacija"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 1, -1, -1]
             },
             {
-              redni: 1,
-              tekst: "Dopolni stavek: ________________________ se ukvarja s preučevanjem teorije in prakse računalniških procesov.",
-              slika: "",
-              odgovori: ["Računalništvo", "Prenos informacij", "Informatika", "Računalniški sistem"],
-              tacni: [true, false, false, false],
-              grananje: [3, 2, 2, 2]
+              "redni": 1,
+              "tekst": "Dopolni stavek: ________________________ se ukvarja s preučevanjem teorije in prakse računalniških procesov.",
+              "slika": "",
+              "odgovori": ["Računalništvo", "Prenos informacij", "Informatika", "Računalniški sistem"],
+              "tacni": [true, false, false, false],
+              "grananje": [3, 2, 2, 2]
             },
             {
-              redni: 2,
-              tekst: "Dopolni stavek: ________________________ se ukvarja s preučevanjem računalnikov in računalništva ter njihovih teoretičnih in praktičnih aplikacij.",
-              slika: "",
-              odgovori: ["Informatika", "Prenos informacij", "Računalništvo", "Računalniški sistem"],
-              tacni: [false, false, true, false],
-              grananje: [-1, -1, 3, -1]
+              "redni": 2,
+              "tekst": "Dopolni stavek: ________________________ se ukvarja s preučevanjem računalnikov in računalništva ter njihovih teoretičnih in praktičnih aplikacij.",
+              "slika": "",
+              "odgovori": ["Informatika", "Prenos informacij", "Računalništvo", "Računalniški sistem"],
+              "tacni": [false, false, true, false],
+              "grananje": [-1, -1, 3, -1]
             }
           ]  
-        }, //end deloviLekcije[1]
+        },
                 
-        { //start deloviLekcije[2]
-          nazivDelaLekcije: "Računalnik (sistem, PC)",
-          teorija: [
+        {
+          "nazivDelaLekcije": "Računalnik (sistem, PC)",
+          "teorija": [
             {
-              tekst: "Računalnik (sistem, PC) je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog. Obdeluje in shranjuje informacije.<br><br>Ta koncept vključuje namizne in prenosne (notebook, laptop) računalnike, pametne telefone, tablice in vgrajene računalnike v avtomobilih, letalih, hladilnikih itd.",
-              slika: "",   //"images/computers.png",
-              video: "videos/Embedded-Compurs.mp4",
+              "tekst": "Računalnik (sistem, PC) je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog. Obdeluje in shranjuje informacije.<br><br>Ta koncept vključuje namizne in prenosne (notebook, laptop) računalnike, pametne telefone, tablice in vgrajene računalnike v avtomobilih, letalih, hladilnikih itd.",
+              "slika": "",
+              "video": "videos/Embedded-Compurs.mp4"
             }
           ],  
             
-          pitanja: [
+          "pitanja": [
             {
-              redni: 0,
-              tekst: "Kaj je računalnik (sistem, PC)?",
-              slika: "images/computers_small.png",
-              odgovori: ["To je niz komponent.", "To je isto kot informatika.", "Računalnik zbira podatke.", "To je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog."],
-              tacni: [false, false, false, true],
-              grananje: [1, 1, 1, 2]
+              "redni": 0,
+              "tekst": "Kaj je računalnik (sistem, PC)?",
+              "slika": "images/computers_small.png",
+              "odgovori": ["To je niz komponent.", "To je isto kot informatika.", "Računalnik zbira podatke.", "To je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog."],
+              "tacni": [false, false, false, true],
+              "grananje": [1, 1, 1, 2]
             },
             {
-              redni: 1,
-              tekst: "Dopolni stavek: ________________________ je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog.",
-              slika: "images/computers_small.png",
-              odgovori: ["Informatika", "Računalnik", "Računalništvo", "Informacija"],
-              tacni: [false, true, false, false],
-              grananje: [-1, 2, -1, -1]
+              "redni": 1,
+              "tekst": "Dopolni stavek: ________________________ je naprava, ki jo je mogoče programirati za izvajanje različnih vrst nalog.",
+              "slika": "images/computers_small.png",
+              "odgovori": ["Informatika", "Računalnik", "Računalništvo", "Informacija"],
+              "tacni": [false, true, false, false],
+              "grananje": [-1, 2, -1, -1]
             },
             {
-              redni: 2,
-              tekst: "Kaj vključuje izraz računalnik?",
-              slika: "",
-              odgovori: ["Ta izraz vključuje namizne in prenosne (notebook, laptop) računalnike, pametne telefone, tablice in vgrajene računalnike itd.", "Vključuje samo namizne računalnike.", "Vključuje samo prenosnike.", "Vključuje samo prenosnike in tablice."],
-              tacni: [true, false, false, false],
-              grananje: [3, -1, -1, -1]
+              "redni": 2,
+              "tekst": "Kaj vključuje izraz računalnik?",
+              "slika": "",
+              "odgovori": ["Ta izraz vključuje namizne in prenosne (notebook, laptop) računalnike, pametne telefone, tablice in vgrajene računalnike itd.", "Vključuje samo namizne računalnike.", "Vključuje samo prenosnike.", "Vključuje samo prenosnike in tablice."],
+              "tacni": [true, false, false, false],
+              "grananje": [3, -1, -1, -1]
             }
           ]  
-        } //end deloviLekcije[2]
-      ],
-                  
-    }, //sl
-    //------dovde je SLOVENAČKI
-    //------Odavde pa na dole je MOŽDA MAĐARSKI....
-
-  }  //KRAJ za klasu lekciju na raznim jezicima
+        }
+      ]                  
+    }
+}
