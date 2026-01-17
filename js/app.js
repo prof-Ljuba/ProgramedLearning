@@ -31,6 +31,8 @@ function showLessonInfo() {
   document.body.innerHTML = `
     <h1>${lessonData.title}</h1>
     <p><strong>id:</strong> ${lessonData.id}</p>
+    <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
+    <hr>
   `;
 }
 
