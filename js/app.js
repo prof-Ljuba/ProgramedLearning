@@ -14,7 +14,7 @@ async function loadLesson(language, lessonFile) {
     }
 
     lessonData = await response.json();
-    showLessonInfo();
+    //showLessonInfo();
   } catch (error) {
     console.error("Greška pri učitavanju lekcije:", error);
     alert("Lekcija ne može da se učita... " + path);
@@ -24,7 +24,7 @@ async function loadLesson(language, lessonFile) {
 // Prikaži osnovne informacije (za početak)
 function showLessonInfo() {
   document.body.innerHTML = `
-    <h1><strong>Naslov lekcije: </strong> ${lessonData.sr.naslov}</h1>
+    <h1><strong>Naslov:</strong> ${lessonData.sr.naslov}</h1>
     //<p><strong>Naslov prozora: </strong> ${lessonData.it.naslovProzora}</p>
     //<p><strong>naziv Dela Lekcije: </strong> ${lessonData.sr.deloviLekcije.nazivDelaLekcije}</p>
     //<hr>
