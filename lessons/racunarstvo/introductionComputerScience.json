@@ -3,11 +3,13 @@
     "_comment-en": "Branched programmed learning - lesson: Introduction to computing and informatics - data, informatics, computers... support-various languages, support-inclusion",
     "_comment-class": "Ova lekcija je namenjena 1. razredu srednje skole",
     "_comment_note_for_teachers": "Slike i video su opcionalni. - Pictures and video are optional.",
-
-    "Author": "Ljubisa Cvetic",
-    "School": "Ugostiteljsko-turisticka skola, Belgrade, Serbia",
-    "id": "introductionComputerScience",
-
+    
+    "meta": {
+      "Author": "Ljubisa Cvetic",
+      "School": "Ugostiteljsko-turisticka skola, Beograd, Srbija",
+      "id": "introductionComputerScience"
+    },
+    
     "sr": 
     { 
       "naslov": "Uvod u računarstvo i informatiku",
