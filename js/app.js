@@ -29,7 +29,7 @@ async function loadLesson(language, lessonFile) {
 // Prikaži osnovne informacije (za početak)
 function showLessonInfo() {
   document.body.innerHTML = `
-    <h1>${lessonData.Author}</h1>
+    <h1>${lessonData.Author}, ${lessonData.School}</h1>
     <p><strong>id:</strong> ${lessonData.id}</p>
     <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
     <hr>
