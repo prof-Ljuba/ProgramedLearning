@@ -19,6 +19,11 @@ async function loadLesson(language, lessonFile) {
     console.error("Greška pri učitavanju lekcije:", error);
     alert("Lekcija ne može da se učita... " + path);
   }
+  try {
+    showLessonInfo();
+  } catch (error) {
+    alert("showLessonInfo() ne može da prikaze podatke, doslo je do greske.");
+  }
 }
 
 // Prikaži osnovne informacije (za početak)
