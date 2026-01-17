@@ -34,6 +34,7 @@ function showLessonInfo() {
     <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
     <hr>
     <p><strong>sr.deloviLekcije[0].nazivDelaLekcije:</strong> ${lessonData.sr.deloviLekcije[0].nazivDelaLekcije}</p>
+    <p><strong>sr.deloviLekcije[0].teorija[1].tekst, tj. pojam informacije:</strong> ${lessonData.sr.deloviLekcije[0].teorija[1].tekst}</p>
   `;
 }
 
