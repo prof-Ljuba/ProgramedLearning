@@ -30,6 +30,7 @@ async function loadLesson(language, lessonFile) {
 function showLessonInfo() {
   document.body.innerHTML = `
     <h1>${lessonData.title}</h1>
+    <p><strong>id:</strong> ${lessonData.id}</p>
   `;
 }
 
