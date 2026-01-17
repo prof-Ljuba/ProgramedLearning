@@ -17,7 +17,7 @@ async function loadLesson(language, lessonFile) {
     showLessonInfo();
   } catch (error) {
     console.error("Greška pri učitavanju lekcije:", error);
-    alert("Lekcija ne može da se učita.");
+    alert("Lekcija ne može da se učita... " + path);
   }
 }
 
