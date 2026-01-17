@@ -1,10 +1,11 @@
 let currentLanguage = "en";  //sr ili en za sada
-let currentLessonFile = "computer_basics.json"; //osnove_racunara.json ili computer_basics.json za sada
+let currentLessonFile = "racunarstvo/introductionComputerScience.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
 let lessonData = null;
 
 // Učitaj lekciju iz JSON fajla
 async function loadLesson(language, lessonFile) {
-  const path = `lessons/${language}/${lessonFile}`;
+  //const path = `lessons/${language}/${lessonFile}`;
+  const path = `lessons/${currentLessonFile}`;
 
   try {
     const response = await fetch(path);
