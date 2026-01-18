@@ -32,7 +32,7 @@ function showLessonInfo() {
     <h1>${lessonData.meta.Author}, ${lessonData.meta.School}</h1>
     <h3>lesson updated: ${lessonData.meta.lesson_updated}, subject: ${lessonData.meta.subject}, license: ${lessonData.meta.license}</h3>
     <p><strong>id:</strong> ${lessonData.meta.id}</p>
-    <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
+    <p><strong>lessonData[currentLanguage].naslov:</strong> ${lessonData[currentLanguage].naslov}</p>
     <hr>
     <p><strong>sr.deloviLekcije[0].nazivDelaLekcije:</strong> ${lessonData.sr.deloviLekcije[0].nazivDelaLekcije}</p>
     <p><strong>sr.deloviLekcije[0].teorija[1].tekst, tj. pojam informacije:</strong> ${lessonData.sr.deloviLekcije[0].teorija[1].tekst}</p>
