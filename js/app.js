@@ -30,7 +30,6 @@ async function loadLesson(language, lessonFile) {
 function showLessonInfo() {
   document.body.innerHTML = `
     <h1>${lessonData.meta.Author}, ${lessonData.meta.School}</h1>
-    <h2>"datum 18.jan 09:53"</h2>
     <p><strong>id:</strong> ${lessonData.meta.id}</p>
     <p><strong>sr.naslov:</strong> ${lessonData.sr.naslov}</p>
     <hr>
