@@ -34,6 +34,7 @@ function showLessonInfo() {
     <p><strong>id:</strong> ${lessonData.meta.id}</p>
     <p><strong>lessonData[currentLanguage].naslov:</strong> ${lessonData[currentLanguage].naslov}</p>
     <hr>
+    <p><strong>lesson default language:</strong> ${lessonData.lesson_default_language}</p>
     <p><strong>lessonData[currentLanguage].deloviLekcije[0].nazivDelaLekcije:</strong> ${lessonData[currentLanguage].deloviLekcije[0].nazivDelaLekcije}</p>
     <p><strong>lessonData[currentLanguage].deloviLekcije[0].teorija[1].tekst, tj. pojam informacije:</strong> ${lessonData[currentLanguage].deloviLekcije[0].teorija[1].tekst}</p>
   `;
