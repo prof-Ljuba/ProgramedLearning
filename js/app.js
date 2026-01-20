@@ -2,6 +2,10 @@ let currentLanguage = "sr";  //sr ili en za sada
 let currentLessonFile = "racunarstvo/introductionComputerScience.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
 let lessonData = null;
 
+// stanje renderera - NOVO 20JAN 23_40
+let deoIndex = 0;      // koji deo lekcije
+let teorijaIndex = 0; // koja teorija u tom delu
+
 // Učitaj lekciju iz JSON fajla
 async function loadLesson(language, lessonFile) {
   //const path = `lessons/${language}/${lessonFile}`;
@@ -19,26 +23,79 @@ async function loadLesson(language, lessonFile) {
     console.error("Greška pri učitavanju lekcije:", error);
     alert("Lekcija ne može da se učita... " + path);
   };
+}
+
+//RENDERER TEORIJE (KLJUČNI DEO), ucitava teoriju i prikazuje vizuelno
+function renderTheory() {
+  const lesson = lessonData[currentLanguage];
+  const deo = lesson.deloviLekcije[deoIndex];
+  const teorija = deo.teorija[teorijaIndex];
+
+  // Naslovi
+  document.getElementById("lessonTitle").innerText = lesson.naslov;
+  document.getElementById("partTitle").innerText = deo.nazivDelaLekcije;
+
+  // Sadržaj teorije
+  let html = `<p>${teorija.tekst}</p>`;
+
+  if (teorija.slika) {
+    html += `<img src="${teorija.slika}" style="max-width:50%; margin-top:10px;">`;
+  }
+
+  if (teorija.video) {
+    html += `
+      <video controls style="max-width:60%; margin-top:10px;">
+        <source src="${teorija.video}">
+      </video>`;
+  }
+
+  document.getElementById("theoryContent").innerHTML = html;
+}
+
+//Dugme „Dalje“ (navigacija)
+document.getElementById("nextBtn").onclick = () => {
+  const lesson = lessonData[currentLanguage];
+  const deo = lesson.deloviLekcije[deoIndex];
+
+  teorijaIndex++;
+
+  // kraj teorije u ovom delu
+  if (teorijaIndex >= deo.teorija.length) {
+    teorijaIndex = 0;
+    deoIndex++;
+  }
+
+  // kraj cele lekcije
+  if (deoIndex >= lesson.deloviLekcije.length) {
+    document.getElementById("theoryContent").innerHTML =
+      "<h3>Kraj teorije. Slede pitanja 🙂</h3>";
+    document.getElementById("nextBtn").disabled = true;
+    return;
+  }
+
+  renderTheory();
+};
+
+//UČITAVANJE LEKCIJE (čisto, bez testa)
+async function loadLesson() {
   try {
-    showLessonInfo();
-  } catch (error) {
-    alert("showLessonInfo() ne može da prikaze podatke, doslo je do greske.");
+    const response = await fetch(`lessons/${currentLessonFile}`);
+    if (!response.ok) throw new Error("Lesson not found");
+
+    lessonData = await response.json();
+
+    deoIndex = 0;
+    teorijaIndex = 0;
+
+    renderTheory();
+  } catch (e) {
+    alert("Greška pri učitavanju lekcije");
+    console.error(e);
   }
 }
 
-// Prikaži osnovne informacije (za početak)
-function showLessonInfo() {
-  document.body.innerHTML = `
-    <h1>${lessonData.meta.Author}, ${lessonData.meta.School}</h1>
-    <h3>Lesson modified: ${lessonData.meta.lesson_modified}, subject: ${lessonData.meta.subject}, license: ${lessonData.meta.license}</h3>
-    <p><strong>id:</strong> ${lessonData.meta.id}</p>
-    <p><strong>lessonData[currentLanguage].naslov:</strong> ${lessonData[currentLanguage].naslov}</p>
-    <hr>
-    <p><strong>lesson default language:</strong> ${lessonData.lesson_default_language}</p>
-    <p><strong>lessonData[currentLanguage].deloviLekcije[0].nazivDelaLekcije:</strong> ${lessonData[currentLanguage].deloviLekcije[0].nazivDelaLekcije}</p>
-    <p><strong>lessonData[currentLanguage].deloviLekcije[0].teorija[1].tekst, tj. pojam informacije:</strong> ${lessonData[currentLanguage].deloviLekcije[0].teorija[1].tekst}</p>
-  `;
-}
+window.onload = loadLesson;
+
 
 // Init
 window.addEventListener("load", () => {
