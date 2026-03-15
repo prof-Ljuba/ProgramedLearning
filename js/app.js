@@ -14,7 +14,7 @@ async function loadLesson(language, lessonFile) {
   try {
     const response = await fetch(path);
     if (!response.ok) {
-      throw new Error("Lesson not found");
+      throw new Error("Lesson not found", response.status);
     }
 
     lessonData = await response.json();
