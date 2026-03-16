@@ -94,8 +94,7 @@ async function loadLesson() {
   }
 }
 
-window.onload = loadLesson;
-
+//window.onload = loadLesson;
 
 // Init
 window.addEventListener("load", () => {
