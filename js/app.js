@@ -94,9 +94,9 @@ async function loadLesson() {
   }
 }
 
-window.onload = loadLesson;
+//window.onload = loadLesson;
 
 // Init
-//window.addEventListener("load", () => {
-//  loadLesson(currentLanguage, currentLessonFile);
-//});
+window.addEventListener("load", () => {
+  loadLesson(currentLanguage, currentLessonFile);
+});
