@@ -20,7 +20,7 @@ async function loadLesson(language, lessonFile) {
     lessonData = await response.json();
     //showLessonInfo();
   } catch (error) {
-    console.error("Greška pri učitavanju lekcije, lekcija ne može da se učita... " + path, error);
+    console.error("Greška pri učitavanju lekcije: " + path, error);
     alert("Lekcija ne može da se učita... " + path);
   };
 }
@@ -89,7 +89,7 @@ async function loadLesson() {
 
     renderTheory();
   } catch (e) {
-    alert("Greška pri učitavanju lekcije");
+    alert("Greška pri učitavanju lekcije, lekcija ne može da se učita... " + path + ", " + e);
     console.error(e);
   }
 }
