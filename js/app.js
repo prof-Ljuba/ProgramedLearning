@@ -79,8 +79,7 @@ document.getElementById("nextBtn").onclick = () => {
 //UČITAVANJE LEKCIJE (čisto, bez testa)
 async function loadLesson() {
   try {
-    const path = `lessons/${currentLessonFile}`;
-    const response = await fetch(path);
+    const response = await fetch(`lessons/${currentLessonFile}`);
     if (!response.ok) throw new Error("Lesson not found");
 
     lessonData = await response.json();
@@ -90,7 +89,7 @@ async function loadLesson() {
 
     renderTheory();
   } catch (e) {
-    alert("Greška pri učitavanju lekcije, lekcija ne može da se učita... " + path + ", ");
+    alert("Greška pri učitavanju lekcije, ili lekcija ne može da se učita... ");
     console.error(e);
   }
 }
