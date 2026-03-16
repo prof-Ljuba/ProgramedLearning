@@ -89,7 +89,7 @@ async function loadLesson() {
 
     renderTheory();
   } catch (e) {
-    alert("Greška pri učitavanju lekcije, lekcija ne može da se učita... " + path + ", " + e);
+    alert("Greška pri učitavanju lekcije, lekcija ne može da se učita... " + path + ", ");
     console.error(e);
   }
 }
