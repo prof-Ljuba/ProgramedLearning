@@ -89,7 +89,7 @@ async function loadLesson() {
 
     renderTheory();
   } catch (e) {
-    alert("Greška pri učitavanju lekcije "+`lessons/${currentLessonFile}`);
+    alert("Greška pri učitavanju lekcije... "+`lessons/${currentLessonFile}`);
     console.error(e);
   }
 }
@@ -100,3 +100,6 @@ async function loadLesson() {
 window.addEventListener("load", () => {
   loadLesson(currentLanguage, currentLessonFile);
 });
+
+
+
