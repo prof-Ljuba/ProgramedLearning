@@ -1,5 +1,5 @@
 let currentLanguage = "sr";  //sr ili en za sada
-let currentLessonFile = "racunarstvo/introductionComputerScience.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
+let currentLessonFile = "racunarstvo/introductionComputerScience123.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
 let lessonData = null;
 
 // stanje renderera - NOVO 20JAN 23_40
@@ -89,7 +89,7 @@ async function loadLesson() {
 
     renderTheory();
   } catch (e) {
-    alert("Greška pri učitavanju lekcije");
+    alert("Greška pri učitavanju lekcije "+`lessons/${currentLessonFile}`);
     console.error(e);
   }
 }
