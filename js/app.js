@@ -79,7 +79,8 @@ document.getElementById("nextBtn").onclick = () => {
 //UČITAVANJE LEKCIJE (čisto, bez testa)
 async function loadLesson() {
   try {
-    const response = await fetch(`lessons/${currentLessonFile}`);
+    const path = `lessons/${currentLessonFile}`;
+    const response = await fetch(path);
     if (!response.ok) throw new Error("Lesson not found");
 
     lessonData = await response.json();
