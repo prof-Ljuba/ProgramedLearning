@@ -7,7 +7,7 @@ let deoIndex = 0;      // koji deo lekcije
 let teorijaIndex = 0; // koja teorija u tom delu
 
 // Učitaj lekciju iz JSON fajla
-async function loadLesson(language, lessonFile) {
+/*async function loadLesson(language, lessonFile) {
   //const path = `lessons/${language}/${lessonFile}`;
   const path = `lessons/${currentLessonFile}`;
 
@@ -23,7 +23,7 @@ async function loadLesson(language, lessonFile) {
     console.error("Greška pri učitavanju lekcije: "+error, error);
     alert("Lekcija ne može da se učita... " + path);
   };
-}
+}*/
 
 //RENDERER TEORIJE (KLJUČNI DEO), ucitava teoriju i prikazuje vizuelno
 function renderTheory() {
