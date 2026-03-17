@@ -1,12 +1,12 @@
 let currentLanguage = "sr";  //sr ili en za sada
-let currentLessonFile = "racunarstvo/introductionComputerScience.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
+let currentLessonFile = "racunarstvo/introductionComputerScience123.json"; //osnove_racunara.json ili computer_basics.json za sada ili lessons/racunarstvo/introductionComputerScience.json
 let lessonData = null;
 
-// stanje renderera - NOVO 20JAN 23_40
+// stanje renderera - NOVO 17mar 09_45
 let deoIndex = 0;      // koji deo lekcije
 let teorijaIndex = 0; // koja teorija u tom delu
 
-// Učitaj lekciju iz JSON fajla
+// Učitaj lekciju iz JSON fajla / ovo sam izbacio, funkcija ispod radi isto
 /*async function loadLesson(language, lessonFile) {
   //const path = `lessons/${language}/${lessonFile}`;
   const path = `lessons/${currentLessonFile}`;
