@@ -101,16 +101,4 @@ window.addEventListener("load", () => {
   loadLesson(currentLanguage, currentLessonFile);
 });
 
-//addEventListener("resize", adjustHeight); sa ovom funkcijom podesava 
-function adjustHeight() {
-  const main = document.getElementById("main");
-  main.style.height = window.innerHeight + "px";
-}
-
-// inicijalno podešavanje
-adjustHeight();
-
-// reaguje na promenu veličine prozora
-window.addEventListener("resize", adjustHeight);
-
 
