@@ -1,1 +1,10 @@
 /* ProgramedLearning main styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#main {
+  min-height: 100vh; /* zauzima ceo prozor */
+}
