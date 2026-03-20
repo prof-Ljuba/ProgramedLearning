@@ -36,7 +36,7 @@ function renderTheory() {
   document.getElementById("partTitle").innerText = deo.nazivDelaLekcije;
 
   // Sadržaj teorije
-  let html = `<p>UCITAVA! ${teorija.tekst}</p>`;
+  let html = `<p>${teorija.tekst}</p>`;
 
   if (teorija.slika) {
     html += `<img src="${teorija.slika}" style="max-width:50%; margin-top:10px;">`;
