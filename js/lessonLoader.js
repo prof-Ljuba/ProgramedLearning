@@ -6,13 +6,13 @@ async function loadLesson(lessonPath, language) {
   try {
     const response = await fetch(lessonPath);
     if (!response.ok) {
-      throw new Error("Ne mogu da učitam lekciju");
+      throw new Error("Ne mogu da učitam lekciju!!");
     }
 
     lessonData = await response.json();
 
     if (!lessonData.languages || !lessonData.languages[language]) {
-      throw new Error("Izabrani jezik ne postoji u lekciji");
+      throw new Error("Izabrani jezik ne postoji u lekciji!!");
     }
 
     currentLanguage = language;
@@ -25,7 +25,7 @@ async function loadLesson(lessonPath, language) {
 
   } catch (error) {
     console.error("Greška pri učitavanju lekcije:", error);
-    alert("Greška pri učitavanju lekcije.");
+    alert("Greška pri učitavanju lekcije!!");
   }
 }
 
