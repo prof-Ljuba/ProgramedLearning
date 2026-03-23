@@ -98,8 +98,8 @@ async function loadLesson() {
 
 // Init
 window.addEventListener("load", () => {
-  loadLesson();
-  //loadLesson(currentLanguage, currentLessonFile);
+  //loadLesson();
+  loadLesson(currentLanguage, currentLessonFile);
 });
 
 
